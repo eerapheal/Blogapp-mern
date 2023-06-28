@@ -50,9 +50,47 @@ const Header = () => {
                 </a>
               </li>
               <li className="mobilenavlinks">
-                <a href="#" alt="Signup" className="navlinks">
+                <a href="#" alt="Signup">
                  Treading News
+                 <i class="fas fa-caret-down"></i>
                 </a>
+                <div className="dropdownMenu">
+                  <ul>
+                    <li>
+                      <a href="" alt="Global news">Global news</a>
+                      </li>
+                    <li>
+                      <a href="" alt="Sport">
+                        Sport
+                        <i class="fas fa-caret-right"></i>
+                        <div className="dropdownMenu1">
+                  <ul>
+                    <li>
+                      <a href="" alt="Global news">Football</a>
+                      </li>
+                    <li>
+                      <a href="" alt="UFC/MMA">
+                        UFC/MMA
+                        </a>
+                      </li>
+                    <li>
+                      <a href="" alt="Rugby">Rugby</a>
+                      </li>
+                    <li>
+                      <a href="" alt="Cricket">Cricket</a>
+                      </li>
+                  </ul>
+                </div>
+                        </a>
+                      </li>
+                    <li>
+                      <a href="" alt="Entern">Enterntement</a>
+                      </li>
+                    <li>
+                      <a href="" alt="Discovery">Discovery</a>
+                      </li>
+                  </ul>
+                </div>
               </li>
               <li className="mobilenavlinks">
                 <a href="#" alt="Login">
@@ -91,9 +129,47 @@ const Header = () => {
                 </a>
               </li>
               <li className="navlinks">
-                <a href="#" alt="Signup" className="navlinks">
+                <a href="#" alt="Signup" className="navlinks1">
                  Treading News
+                 <i class="fas fa-caret-down"></i>
                 </a>
+                <div className="dropdownMenu">
+                  <ul>
+                    <li>
+                      <a href="" alt="Global news">Global news</a>
+                      </li>
+                    <li>
+                      <a href="" alt="Sport">
+                        Sport
+                        <i class="fas fa-caret-right"></i>
+                        <div className="dropdownMenu1">
+                  <ul>
+                    <li>
+                      <a href="" alt="Global news">Football</a>
+                      </li>
+                    <li>
+                      <a href="" alt="UFC/MMA">
+                        UFC/MMA
+                        </a>
+                      </li>
+                    <li>
+                      <a href="" alt="Rugby">Rugby</a>
+                      </li>
+                    <li>
+                      <a href="" alt="Cricket">Cricket</a>
+                      </li>
+                  </ul>
+                </div>
+                        </a>
+                      </li>
+                    <li>
+                      <a href="" alt="Entern">Enterntement</a>
+                      </li>
+                    <li>
+                      <a href="" alt="Discovery">Discovery</a>
+                      </li>
+                  </ul>
+                </div>
               </li>
               <li className="navlinks">
                 <a href="#" alt="Login">

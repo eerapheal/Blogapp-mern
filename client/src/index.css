@@ -114,6 +114,42 @@ main {
   transition: cubic-bezier(0.157, 0.885, 032, 1.276) 0,5s;
 }
 
+.dropdownMenu {
+  display:none;
+  
+  }
+  
+  .dropdownMenu ul{
+    display: block;
+    margin: 10px;
+  }
+  
+  .fas {
+    float: right;
+    margin-left: 10px;
+    padding-top: 3px;
+  }
+  
+  .dropdownMenu1 {
+    display: none;
+  }
+  
+  .dropdownMenu ul li:hover .dropdownMenu1 {
+    display: block;
+    position: absolute;
+  left: 120px;
+  top: 28px;
+  background-color:rgb(68, 70, 84);;
+  /* margin: 15px; */
+  }
+  
+  .mobilenavlinks:hover .dropdownMenu {
+    display: block;
+    position: absolute;
+  right: 10px;
+  background-color:rgb(68, 70, 84);;
+  padding: 15px;
+  }
 
 .headerDesk {
   display: none;
@@ -123,7 +159,7 @@ main {
   background-color:rgb(154, 181, 240);
   color: rgb(68, 70, 84);
   max-width:150px;
-  padding: 10px;
+  /* padding: 10px; */
   border-radius: 25px;
   border: 2px solid rgb(0, 183, 255);
 }
@@ -148,7 +184,7 @@ main {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    min-height: 72px;
+    height: 72px;
     background-color: #19c37d;
   }
 
@@ -164,6 +200,7 @@ main {
 .navlinks {
   text-decoration: none;
   list-style: none;
+  position: relative;
 }
 
 .navlinks a {
@@ -171,5 +208,43 @@ main {
   font-size: 20px;
   font-weight: 400;
   color: #fff;
+}
+
+.dropdownMenu {
+display:none;
+
+}
+
+.dropdownMenu ul{
+  display: block;
+  margin: 10px;
+}
+
+.fas {
+  float: right;
+  margin-left: 10px;
+  padding-top: 3px;
+}
+
+.dropdownMenu1 {
+  display: none;
+}
+
+.dropdownMenu ul li:hover .dropdownMenu1 {
+  display: block;
+  position: absolute;
+left: 150px;
+top: 28px;
+background-color:rgb(218, 223, 252);
+margin: 15px;
+}
+
+.navlinks:hover .dropdownMenu {
+  display: block;
+  position: absolute;
+left: 0;
+top: 100%;
+background-color:rgb(218, 223, 252);
+padding: 15px;
 }
 }
