@@ -1,1 +1,66 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  /* font-family: 'Roboto', sans-serif; */
+}
+body {
+  background-color: rgb(68, 70, 84);
+}
+main {
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+.logo {
+  text-decoration: none;
+  font-size: 35px;
+  font-weight: 700;
+  color: #fff;
+  font-family: "Fasthand", sans-serif;
+}
+
+.logoB {
+  color: #a81919;
+}
+.navItem {
+  display: flex;
+  gap: 12px;
+}
+
+.navlinks {
+  text-decoration: none;
+  list-style: none;
+}
+
+.navlinks a {
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: 400;
+  color: #fff;
+}
+
+.headerDesk {
+  display: none;
+}
+
+@media all and (min-width: 768px) {
+  .mobileMenu {
+    display: none;
+  }
+  
+  main {
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
+  .headerDesk {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 72px;
+    background-color: #19c37d;
+  }
+}
