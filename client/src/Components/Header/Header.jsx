@@ -27,7 +27,7 @@ const Header = () => {
               <div className={burger_class}></div>
             </div>
             <div>
-            <a href="#" className="logo" alt="Logo">
+            <a href="" className="logo" alt="Logo">
               Sant<span className="logoB">B</span>log
             </a>
           </div>
@@ -35,22 +35,22 @@ const Header = () => {
           <div className={menu_class}>
           <ul className="mobilenavItem">
             <li className="mobilenavlinks">
-                <a href="#" alt="Signup" className="navlinks">
+                <a href="" alt="Signup" className="navlinks">
                   Technology
                 </a>
               </li>
               <li className="mobilenavlinks">
-                <a href="#" alt="Signup" className="navlinks">
+                <a href="" alt="Signup" className="navlinks">
                  Lifestyle
                 </a>
               </li>
               <li className="mobilenavlinks">
-                <a href="#" alt="Signup" className="navlinks">
+                <a href="" alt="Signup" className="navlinks">
                   Health
                 </a>
               </li>
               <li className="mobilenavlinks">
-                <a href="#" alt="Signup">
+                <a href="" alt="Signup">
                  Treading News
                  <i class="fas fa-caret-down"></i>
                 </a>
@@ -93,12 +93,12 @@ const Header = () => {
                 </div>
               </li>
               <li className="mobilenavlinks">
-                <a href="#" alt="Login">
+                <a href="" alt="Login">
                   Login
                 </a>
               </li>
               <li className="mobilenavlinks">
-                <a href="#" alt="Signup" className="navlinks">
+                <a href="" alt="Signup" className="navlinks">
                   Sign Up
                 </a>
               </li>
@@ -107,29 +107,29 @@ const Header = () => {
         </div>
         <div className="headerDesk">
           <div>
-            <a href="#" className="logo" alt="Logo">
+            <a href="" className="logo" alt="Logo">
               Sant<span className="logoB">B</span>log
             </a>
           </div>
           <nav>
             <ul className="navItem">
             <li className="navlinks">
-                <a href="#" alt="Signup" className="navlinks">
+                <a href="" alt="Signup" className="navlinks">
                   Technology
                 </a>
               </li>
               <li className="navlinks">
-                <a href="#" alt="Signup" className="navlinks">
+                <a href="" alt="Signup" className="navlinks">
                  Lifestyle
                 </a>
               </li>
               <li className="navlinks">
-                <a href="#" alt="Signup" className="navlinks">
+                <a href="" alt="Signup" className="navlinks">
                   Health
                 </a>
               </li>
               <li className="navlinks">
-                <a href="#" alt="Signup" className="navlinks1">
+                <a href="" alt="Signup" className="navlinks1">
                  Treading News
                  <i class="fas fa-caret-down"></i>
                 </a>
@@ -172,12 +172,12 @@ const Header = () => {
                 </div>
               </li>
               <li className="navlinks">
-                <a href="#" alt="Login">
+                <a href="" alt="Login">
                   Login
                 </a>
               </li>
               <li className="navlinks">
-                <a href="#" alt="Signup" className="navlinks">
+                <a href="" alt="Signup" className="navlinks">
                   Sign Up
                 </a>
               </li>

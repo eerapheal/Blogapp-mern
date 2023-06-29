@@ -5,6 +5,7 @@ import chiyerem from "../../Assets/images/chiyerem.jpg";
 
 const Post = () => {
   return (
+    <main>
     <div className="post">
       <div className="mainPost">
       <div className="imgpost">
@@ -64,6 +65,7 @@ const Post = () => {
         </div>
       </div>
     </div>
+    </main>
   );
 };
 
