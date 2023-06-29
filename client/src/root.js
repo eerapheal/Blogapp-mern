@@ -1,5 +1,6 @@
 import React from 'react';
 import Header from "./Components/Header/Header";
+import Post from './Components/Post/Post'
 
 const Root = () => {
   return (
@@ -7,7 +8,9 @@ const Root = () => {
       <header>
         <Header />
       </header>
-      <main>Posts</main>
+      <main>
+     <Post />
+      </main>
     </body>
   );
 };
