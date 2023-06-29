@@ -19,7 +19,7 @@ const Header = () => {
   return (
 
       <nav>
-        <div className="mobileMenuDiv" style={{ width: "100%", height: "100vh" }}>
+        <div className="mobileMenuDiv" style={{ width: "100%" }}>
           <nav className="mobileMenu">
             <div className="burger-menu" onClick={updateMenu}>
               <div className={burger_class}></div>
@@ -36,7 +36,7 @@ const Header = () => {
           <ul className="mobilenavItem">
             <li className="mobilenavlinks">
                 <a href="#" alt="Signup" className="navlinks">
-                  Contact US
+                  Technology
                 </a>
               </li>
               <li className="mobilenavlinks">
@@ -46,7 +46,7 @@ const Header = () => {
               </li>
               <li className="mobilenavlinks">
                 <a href="#" alt="Signup" className="navlinks">
-                  Shopping
+                  Health
                 </a>
               </li>
               <li className="mobilenavlinks">
@@ -115,7 +115,7 @@ const Header = () => {
             <ul className="navItem">
             <li className="navlinks">
                 <a href="#" alt="Signup" className="navlinks">
-                  Contact US
+                  Technology
                 </a>
               </li>
               <li className="navlinks">
@@ -125,7 +125,7 @@ const Header = () => {
               </li>
               <li className="navlinks">
                 <a href="#" alt="Signup" className="navlinks">
-                  Shopping
+                  Health
                 </a>
               </li>
               <li className="navlinks">
