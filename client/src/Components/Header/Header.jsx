@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+import { Link } from "react-router-dom";
 const Header = () => {
   const [burger_class, setBurgerClass] = useState("burger-bar unclicked");
   const [menu_class, setMenuClass] = useState("menu hidden");
@@ -27,37 +27,37 @@ const Header = () => {
               <div className={burger_class}></div>
             </div>
             <div>
-            <a href="" className="logo" alt="Logo">
+            <Link to="/" className="logo" alt="Logo">
               Sant<span className="logoB">B</span>log
-            </a>
+            </Link>
           </div>
           </nav>
           <div className={menu_class}>
           <ul className="mobilenavItem">
             <li className="mobilenavlinks">
-                <a href="" alt="Signup" className="navlinks">
+                <Link to="/technology" alt="Technology" className="navlinks">
                   Technology
-                </a>
+                </Link>
               </li>
               <li className="mobilenavlinks">
-                <a href="" alt="Signup" className="navlinks">
+                <Link to="/lifestyle" alt="Lifestyle" className="navlinks">
                  Lifestyle
-                </a>
+                </Link>
               </li>
               <li className="mobilenavlinks">
-                <a href="" alt="Signup" className="navlinks">
+                <Link to="/health" alt="Health" className="navlinks">
                   Health
-                </a>
+                </Link>
               </li>
               <li className="mobilenavlinks">
-                <a href="" alt="Signup">
+                <Link to="/treadingnews" alt="treadingNews">
                  Treading News
                  <i class="fas fa-caret-down"></i>
-                </a>
+                </Link>
                 <div className="dropdownMenu">
                   <ul>
                     <li>
-                      <a href="" alt="Global news">Global news</a>
+                      <a href="" alt="Global news">General News</a>
                       </li>
                     <li>
                       <a href="" alt="Sport">
@@ -93,46 +93,46 @@ const Header = () => {
                 </div>
               </li>
               <li className="mobilenavlinks">
-                <a href="" alt="Login">
+                <Link to="/login" alt="Login">
                   Login
-                </a>
+                </Link>
               </li>
               <li className="mobilenavlinks">
-                <a href="" alt="Signup" className="navlinks">
+                <Link to="/signup" alt="Signup" className="navlinks">
                   Sign Up
-                </a>
+                </Link>
               </li>
             </ul>
             </div>
         </div>
         <div className="headerDesk">
           <div>
-            <a href="" className="logo" alt="Logo">
+            <Link to="/" className="logo" alt="Logo">
               Sant<span className="logoB">B</span>log
-            </a>
+            </Link>
           </div>
           <nav>
             <ul className="navItem">
             <li className="navlinks">
-                <a href="" alt="Signup" className="navlinks">
+                <Link to="/Technology" alt=" Technology" className="navlinks">
                   Technology
-                </a>
+                </Link>
               </li>
               <li className="navlinks">
-                <a href="" alt="Signup" className="navlinks">
+                <Link to="/lifestyle" alt="Lifestyle" className="navlinks">
                  Lifestyle
-                </a>
+                </Link>
               </li>
               <li className="navlinks">
-                <a href="" alt="Signup" className="navlinks">
+                <Link to="/health" alt="Health" className="navlinks">
                   Health
-                </a>
+                </Link>
               </li>
               <li className="navlinks">
-                <a href="" alt="Signup" className="navlinks1">
+                <Link to="/treandingNews" alt="treandingNews" className="navlinks1">
                  Treading News
                  <i class="fas fa-caret-down"></i>
-                </a>
+                </Link>
                 <div className="dropdownMenu">
                   <ul>
                     <li>
@@ -172,14 +172,14 @@ const Header = () => {
                 </div>
               </li>
               <li className="navlinks">
-                <a href="" alt="Login">
+                <Link to="/login" alt="Login">
                   Login
-                </a>
+                </Link>
               </li>
               <li className="navlinks">
-                <a href="" alt="Signup" className="navlinks">
+                <Link to="/signup" alt="Signup" className="navlinks">
                   Sign Up
-                </a>
+                </Link>
               </li>
             </ul>
           </nav>

@@ -35,7 +35,7 @@ const Post = () => {
                “Pitch Yourself”
           </h2>
           <p  className="info">
-            <a className="author">Docas</a>
+            <a className="author">Dorcas </a>
             <time>29-06-2023 10:45</time>
           </p>
           <p className="postParagh">
