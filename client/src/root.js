@@ -1,6 +1,6 @@
-import React from 'react';
+import React from "react";
 import Header from "./Components/Header/Header";
-import Post from './Components/Post/Post'
+import Post from "./Components/Post/Post";
 
 const Root = () => {
   return (
@@ -9,7 +9,7 @@ const Root = () => {
         <Header />
       </header>
       <main>
-     <Post />
+        <Post />
       </main>
     </body>
   );
