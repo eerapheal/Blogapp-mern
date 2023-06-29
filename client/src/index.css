@@ -153,14 +153,15 @@ main {
     font-size: 25px;
     font-weight: 500;
     line-height: 25px;
-    color: #fff;
+    color:aquamarine;
+  
   }
 
   .postParagh {
     font-size: 15px;
     font-weight: 400;
     line-height: 18px;
-    color:aquamarine;
+    color: #fff;
   }
   
   .dropdownMenu1 {
