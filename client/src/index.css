@@ -98,17 +98,17 @@ main {
 
 .burger-bar.clicked:nth-child(1){
   transform:  rotate(50deg) translate(0.75em, 1.25em);
-  transition: ease-out 0.5s;
+  transition: ease-out 2s;
 }
 
 .burger-bar.clicked:nth-child(2){
   transform:  scale(0.1);
-  transition: ease-out 0.5s;
+  transition: ease-out 2s;
 }
 
 .burger-bar.clicked:nth-child(3){
   transform:  rotate(143deg) translate(-0.2em, 1em);
-  transition: ease-out 0.5s;
+  transition: ease-out 2s;
 }
 
 .burger-bar.unclicked {
