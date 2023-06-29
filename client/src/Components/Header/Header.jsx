@@ -17,7 +17,7 @@ const Header = () => {
   };
 
   return (
-    <>
+
       <nav>
         <div className="mobileMenuDiv" style={{ width: "100%", height: "100vh" }}>
           <nav className="mobileMenu">
@@ -185,7 +185,7 @@ const Header = () => {
           </nav>
         </div>
       </nav>
-    </>
+
   );
 };
 
