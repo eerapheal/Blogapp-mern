@@ -6,10 +6,10 @@ const SignUp = () => {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  
+
   const register = async (ev) => {
     ev.preventDefault();
-    await fetch('http://localhost:4000', {
+    await fetch('http://localhost:4000/signup', {
       method: 'POST',
       body: JSON.stringify({ username, email, password }),
       headers: { 'Content-type': 'application/json' },
