@@ -6,6 +6,9 @@ const SignUp = () => {
     <main>
     <form className="form">
         <h1 className="formTitle">Sign up new user</h1>
+        <span className="input-span">
+    <label for="name" className="label">Name</label>
+    <input type="name" name="name" id="name" /></span>  
     <span className="input-span">
     <label for="email" className="label">Email</label>
     <input type="email" name="email" id="email" /></span>

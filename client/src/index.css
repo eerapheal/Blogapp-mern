@@ -188,6 +188,7 @@ main {
     gap: .5rem;
   }
   
+  form input[type="name"],
   form input[type="email"],
   form input[type="password"] {
     border-radius: 0.5rem;
