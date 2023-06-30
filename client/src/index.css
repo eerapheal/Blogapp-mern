@@ -179,6 +179,7 @@ main {
   .formTitle {
     color: var(--bg-light);
     font-weight: 600;
+    font-size: 2.3rem;
   }
   
   .form .input-span {
@@ -188,7 +189,7 @@ main {
     gap: .5rem;
   }
   
-  form input[type="name"],
+  form input[type="text"],
   form input[type="email"],
   form input[type="password"] {
     border-radius: 0.5rem;
@@ -201,7 +202,7 @@ main {
     background-color: var(--clr-alpha);
     outline: 2px solid var(--bg-dark);
   }
-  
+  form input[type="text"]:focus,
   form input[type="email"]:focus,
   form input[type="password"]:focus {
     outline: 2px solid var(--clr);
