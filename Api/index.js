@@ -1,16 +1,27 @@
 const express = require('express');
-const cors =require('cors');
+const cors = require('cors');
+const mongoose = require('mongoose');
+const User = require('./model/User.js'); // Add the .js extension if required
 
 const app = express();
-app.use(cors());
-
-mongoose.connent('mongodb+srv://santblog:Bj3xClD4mrBHEtQF@cluster0.rax4fyi.mongodb.net/')
-
+app.use(cors({
+    origin: 'http://localhost:3000' // Replace with the appropriate domain of your client application
+  }));
+  
 app.use(express.json());
 
-app.get('/signup', (req, res) => {
-    const {username, email, password} =req.body;
-    res.json('{requestData:{username, email, password}}');
-})
+mongoose.connect('mongodb+srv://ekpenisiraphael:RGDJAzqGpAc3L496@cluster0.nqm5shy.mongodb.net/?retryWrites=true&w=majority', {
+  useNewUrlParser: true,
+  useUnifiedTopology: true
+});
 
-app.listen(4000)
+app.post('/register', async (req, res) => {
+  const { username, email, password } = req.body;
+  const userDoc = await User.create({ username, email, password });
+
+  res.json(userDoc);
+});
+
+app.listen(4000, () => {
+  console.log('Server is listening on port 4000');
+});
