@@ -1,8 +1,14 @@
 const express = require('express');
-const app = express();
+const cors =require('cors');
 
-app.post('/signup', (req, res) => {
-    res.json('test ok');
+const app = express();
+app.use(cors());
+
+app.use(express.json());
+
+app.get('/signup', (req, res) => {
+    const {username, email, password} =req.body;
+    res.json('{requestData:{username, email, password}}');
 })
 
 app.listen(4000)
