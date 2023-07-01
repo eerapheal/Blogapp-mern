@@ -8,6 +8,8 @@ import TreadingNews from './Components/TreadingNews/TreadingNews'
 import Technology from './Components/Technology/Technology'
 import Health from './Components/Health/Health'
 import Lifestyle from './Components/Lifestyle/Lifestyle'
+import Gramarlly from './Components/Gramarlly/Gramarlly'
+
 const Root = () => {
   return (
 
@@ -25,6 +27,7 @@ const Root = () => {
           <Route path="/treadingnews" element={<TreadingNews />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<SignUp />} />
+          <Route path="/gramarlly" element={<Gramarlly />} />
         </Routes>
            </Router>
 
