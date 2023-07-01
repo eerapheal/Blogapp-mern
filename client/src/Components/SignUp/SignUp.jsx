@@ -1,6 +1,5 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { useState } from "react";
 
 const SignUp = () => {
   const [username, setUsername] = useState("");
@@ -9,19 +8,33 @@ const SignUp = () => {
 
   const register = async (ev) => {
     ev.preventDefault();
-    await fetch('http://localhost:4000/signup', {
-      method: 'POST',
-      body: JSON.stringify({ username, email, password }),
-      headers: { 'Content-type': 'application/json' },
-    });
+
+    try {
+      const response = await fetch("http://localhost:4000/signup", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ username, email, password }),
+      });
+
+      if (response.ok) {
+        console.log("User registered successfully");
+        // Handle successful registration, e.g., show a success message or redirect
+      } else {
+        console.log("Registration failed");
+        // Handle failed registration, e.g., show an error message
+      }
+    } catch (error) {
+      console.log("Error occurred during registration:", error);
+      // Handle any network or server errors
+    }
   };
-  
+
   return (
     <main>
-      <form className="form" onSumit={register}>
+      <form className="form" onSubmit={register}>
         <h1 className="formTitle">Sign up new user</h1>
         <span className="input-span">
-          <label for="name" className="label">
+          <label htmlFor="username" className="label">
             Name
           </label>
           <input
@@ -33,7 +46,7 @@ const SignUp = () => {
           />
         </span>
         <span className="input-span">
-          <label for="email" className="label">
+          <label htmlFor="email" className="label">
             Email
           </label>
           <input
@@ -45,7 +58,7 @@ const SignUp = () => {
           />
         </span>
         <span className="input-span">
-          <label for="password" className="label">
+          <label htmlFor="password" className="label">
             Password
           </label>
           <input
