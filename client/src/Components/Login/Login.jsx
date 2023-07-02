@@ -6,6 +6,18 @@ const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
+  const login = async (ev) => {
+    ev.preventDefault();
+   
+    await fetch('http://localhost:4000/login', {
+      method: 'POST',
+      body: JSON.stringify({ email, password }),
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    })    
+  };
+
   return (
     <main>
       <form className="form">
