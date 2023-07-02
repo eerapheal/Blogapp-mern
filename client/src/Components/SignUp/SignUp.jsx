@@ -9,21 +9,26 @@ const SignUp = () => {
   const register = async (ev) => {
     ev.preventDefault();
    
-    fetch('http://localhost:4000/register', {
+    const response = await fetch('http://localhost:4000/register', {
       method: 'POST',
       body: JSON.stringify({ username, email, password }),
       headers: {
         'Content-Type': 'application/json'
       }
     })
-      .then(response => response.json())
-      .then(data => {
-        // Handle the successful response
-      })
-      .catch(error => {
-        console.error('An error occurred:', error);
-        // Handle the error and display an appropriate message to the user
-      });
+    if (response.status === 200) {
+      alart('resgistration successful');
+    }else {
+      alart('resgistration failed');
+    }
+      // .then(response => response.json())
+      // .then(data => {
+      //   // Handle the successful response
+      // })
+      // .catch(error => {
+      //   console.error('An error occurred:', error);
+      //   // Handle the error and display an appropriate message to the user
+      // });
 
       
   };
