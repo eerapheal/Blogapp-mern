@@ -31,6 +31,14 @@ app.post('/register', async (req, res) => {
  }
 });
 
+app.post('/login', async (req, res) => {
+  const {  email, password } = req.body;
+
+  const userData = await User.findOne({ email}) 
+ const passPare = bcrypt.compareSync(password, userData.password);
+  res.json(passPare);
+});
+
 app.listen(4000, () => {
   console.log('Server is listening on port 4000');
 });

@@ -20,7 +20,7 @@ const Login = () => {
 
   return (
     <main>
-      <form className="form">
+      <form className="form" onSubmit={login}>
         <h1 className="formTitle">Log in into your account</h1>
         <span className="input-span">
           <label for="email" className="label">
