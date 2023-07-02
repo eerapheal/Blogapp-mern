@@ -7,7 +7,7 @@ const app = express();
 app.use(cors({
     origin: 'http://localhost:3000' // Replace with the appropriate domain of your client application
   }));
-  
+
 app.use(express.json());
 
 mongoose.connect('mongodb+srv://ekpenisiraphael:RGDJAzqGpAc3L496@cluster0.nqm5shy.mongodb.net/?retryWrites=true&w=majority', {
@@ -17,9 +17,13 @@ mongoose.connect('mongodb+srv://ekpenisiraphael:RGDJAzqGpAc3L496@cluster0.nqm5sh
 
 app.post('/register', async (req, res) => {
   const { username, email, password } = req.body;
-  const userDoc = await User.create({ username, email, password });
+ try{ 
+  const userData = await User.create({ username, email, password });
 
-  res.json(userDoc);
+  res.json(userData);
+ }catch(e) {
+    res.status(400).json(e)
+ }
 });
 
 app.listen(4000, () => {

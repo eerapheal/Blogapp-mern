@@ -8,25 +8,24 @@ const SignUp = () => {
 
   const register = async (ev) => {
     ev.preventDefault();
-
-    try {
-      const response = await fetch("http://localhost:4000/signup", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ username, email, password }),
+   
+    fetch('http://localhost:4000/register', {
+      method: 'POST',
+      body: JSON.stringify({ username, email, password }),
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    })
+      .then(response => response.json())
+      .then(data => {
+        // Handle the successful response
+      })
+      .catch(error => {
+        console.error('An error occurred:', error);
+        // Handle the error and display an appropriate message to the user
       });
 
-      if (response.ok) {
-        console.log("User registered successfully");
-        // Handle successful registration, e.g., show a success message or redirect
-      } else {
-        console.log("Registration failed");
-        // Handle failed registration, e.g., show an error message
-      }
-    } catch (error) {
-      console.log("Error occurred during registration:", error);
-      // Handle any network or server errors
-    }
+      
   };
 
   return (
