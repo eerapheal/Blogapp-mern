@@ -17,9 +17,9 @@ const SignUp = () => {
       }
     })
     if (response.status === 200) {
-      alart('resgistration successful');
+      alert('resgistration successful');
     }else {
-      alart('resgistration failed');
+      alert('resgistration failed');
     }
       // .then(response => response.json())
       // .then(data => {
