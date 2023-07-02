@@ -2,8 +2,10 @@ const express = require('express');
 const cors = require('cors');
 const mongoose = require('mongoose');
 const User = require('./model/User.js'); // Add the .js extension if required
+const bcrypt = require('bcryptjs');
 
 const app = express();
+const salt = bcrypt.genSaltSync(10);
 app.use(cors({
     origin: 'http://localhost:3000' // Replace with the appropriate domain of your client application
   }));
@@ -18,7 +20,10 @@ mongoose.connect('mongodb+srv://ekpenisiraphael:RGDJAzqGpAc3L496@cluster0.nqm5sh
 app.post('/register', async (req, res) => {
   const { username, email, password } = req.body;
  try{ 
-  const userData = await User.create({ username, email, password });
+  const userData = await User.create({ 
+    username, email, 
+    password:bcrypt.hashSync(password, salt) 
+  });
 
   res.json(userData);
  }catch(e) {
