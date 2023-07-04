@@ -4,6 +4,7 @@ const mongoose = require('mongoose');
 const User = require('./model/User.js');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
+const cookieParser = require('cookie-parser');
 
 const app = express();
 const salt = bcrypt.genSaltSync(10);
@@ -20,6 +21,7 @@ mongoose.connect('mongodb+srv://ekpenisiraphael:RGDJAzqGpAc3L496@cluster0.nqm5sh
   useNewUrlParser: true,
   useUnifiedTopology: true
 });
+app.use(cookieParser());
 
 app.post('/register', async (req, res) => {
   const { username, email, password } = req.body;
@@ -61,6 +63,14 @@ app.post('/login', async (req, res) => {
     res.status(500).json('An error occurred');
   }
 });
+
+app.get('/profile', (req, res) => {
+  const {token} = req.cookies;
+  jwt.verify(token, secret, {}, (err, info) => {
+    if(err) throw err
+    res.json(info)
+  })
+})
 
 app.listen(4000, () => {
   console.log('Server is listening on port 4000');

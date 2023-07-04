@@ -1,6 +1,18 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { useEffect } from 'react'
+
 const Header = () => {
+useEffect(() => {
+fetch('http://localhost:4000/profile', {
+  credentials: "include",
+}).then(response => {
+    response.json().then(usersInfo => {
+
+    });
+})
+},[])
+
   const [burger_class, setBurgerClass] = useState("burger-bar unclicked");
   const [menu_class, setMenuClass] = useState("menu hidden");
   const [isMenuClicked, setIsMenuClicked] = useState(false);
