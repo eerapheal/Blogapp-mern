@@ -46,6 +46,7 @@
  - Nodejs
  - HTML
  - CSS
+ - CORS
 
 
 <details>
@@ -76,7 +77,7 @@
 
 - **[Register as a user]**
 - **[Create a post]**
-- **[Comment on post]**
+- **[Live editor]**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
