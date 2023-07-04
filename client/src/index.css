@@ -4,7 +4,7 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 body {
   background-color: rgb(68, 70, 84);
@@ -38,8 +38,8 @@ main {
 .mobilenavlinks {
   text-decoration: none;
   list-style: none;
-  background-color:rgb(68, 70, 84);
-  max-width:150px;
+  background-color: rgb(68, 70, 84);
+  max-width: 150px;
   padding: 10px;
   border-radius: 25px;
   border: 2px solid rgb(0, 183, 255);
@@ -55,7 +55,7 @@ main {
 .mobileMenu {
   position: fixed;
   width: 100%;
- align-items: center;
+  align-items: center;
   background-color: #19c37d;
   display: flex;
   justify-content: space-between;
@@ -95,195 +95,188 @@ main {
   display: inherit;
 }
 
-
-.burger-bar.clicked:nth-child(1){
-  transform:  rotate(50deg) translate(0.75em, 1.25em);
+.burger-bar.clicked:nth-child(1) {
+  transform: rotate(50deg) translate(0.75em, 1.25em);
   transition: ease-out 2s;
 }
 
-.burger-bar.clicked:nth-child(2){
-  transform:  scale(0.1);
+.burger-bar.clicked:nth-child(2) {
+  transform: scale(0.1);
   transition: ease-out 2s;
 }
 
-.burger-bar.clicked:nth-child(3){
-  transform:  rotate(143deg) translate(-0.2em, 1em);
+.burger-bar.clicked:nth-child(3) {
+  transform: rotate(143deg) translate(-0.2em, 1em);
   transition: ease-out 2s;
 }
 
 .burger-bar.unclicked {
   transform: rotate(0) translate(0);
-  transition: cubic-bezier(0.157, 0.885, 032, 1.276) 0,5s;
+  transition: cubic-bezier(0.157, 0.885, 032, 1.276) 0, 5s;
 }
 
 .dropdownMenu {
-  display:none;
-  
-  }
-  
-  .dropdownMenu ul{
-    display: block;
-    margin: 10px;
-  }
-  
-  .fas {
-    float: right;
-    margin-left: 10px;
-    padding-top: 3px;
-  }
+  display: none;
+}
 
-  .info {
-    color: bisque;
-    padding: 5px;
-    font-size: 12px;
-    font-weight: 200;
-    font-family: 'inter';
-  }
-.mainPost  {
+.dropdownMenu ul {
+  display: block;
+  margin: 10px;
+}
+
+.fas {
+  float: right;
+  margin-left: 10px;
+  padding-top: 3px;
+}
+
+.info {
+  color: bisque;
+  padding: 5px;
+  font-size: 12px;
+  font-weight: 200;
+  font-family: "inter";
+}
+.mainPost {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 25px;;
+  gap: 25px;
 }
 .imgpost img {
-    max-width: 100%;
-    min-height: 190px;
-  }
+  max-width: 100%;
+  min-height: 190px;
+}
 
-  .postTitle {
-    font-size: 25px;
-    font-weight: 500;
-    line-height: 25px;
-    color:aquamarine;
-  
-  }
+.postTitle {
+  font-size: 25px;
+  font-weight: 500;
+  line-height: 25px;
+  color: aquamarine;
+}
 
-  .postParagh {
-    font-size: 15px;
-    font-weight: 400;
-    line-height: 18px;
-    color: #fff;
-  }
+.postParagh {
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 18px;
+  color: #fff;
+}
 
-  form {
-    --bg-light: #efefef;
-    --bg-dark: #707070;
-    --clr: #58BC82;
-    --clr-alpha: #9c9c9c60;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
-    width: 100%;
-  }
+form {
+  --bg-light: #efefef;
+  --bg-dark: #707070;
+  --clr: #58bc82;
+  --clr-alpha: #9c9c9c60;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+}
 
-  .formTitle {
-    color: var(--bg-light);
-    font-weight: 600;
-    font-size: 2.3rem;
-  }
-  
-  .form .input-span {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    gap: .5rem;
-  }
-  
-  form input[type="text"],
-  form input[type="email"],
-  form input[type="password"] {
-    border-radius: 0.5rem;
-    padding: 1rem 0.75rem;
-    width: 100%;
-    border: none;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    background-color: var(--clr-alpha);
-    outline: 2px solid var(--bg-dark);
-  }
-  form input[type="text"]:focus,
-  form input[type="email"]:focus,
-  form input[type="password"]:focus {
-    outline: 2px solid var(--clr);
-  }
-  
-  .label {
-    align-self: flex-start;
-    color: var(--clr);
-    font-weight: 600;
-  }
+.formTitle {
+  color: var(--bg-light);
+  font-weight: 600;
+  font-size: 2.3rem;
+}
 
-  
-  form .submit {
-    padding: 1rem 0.75rem;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 0.5rem;
-    border-radius: 3rem;
-    background-color: var(--bg-dark);
-    color: var(--bg-light);
-    border: none;
-    cursor: pointer;
-    transition: all 300ms;
-    font-weight: 600;
-    font-size: .9rem;
-  }
-  
-  form .submit:hover {
-    background-color: var(--clr);
-    color: var(--bg-dark);
-  }
-  
-  .span {
-    text-decoration: none;
-    color: var(--bg-dark);
-  }
-  
-  .span a {
-    color: var(--clr);
-  }
+.form .input-span {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
 
-  
-  .dropdownMenu1 {
-    display: none;
-  }
-  
-  .dropdownMenu ul li:hover .dropdownMenu1 {
-    display: block;
-    position: absolute;
+form input[type="text"],
+form input[type="email"],
+form input[type="password"] {
+  border-radius: 0.5rem;
+  padding: 1rem 0.75rem;
+  width: 100%;
+  border: none;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: var(--clr-alpha);
+  outline: 2px solid var(--bg-dark);
+}
+form input[type="text"]:focus,
+form input[type="email"]:focus,
+form input[type="password"]:focus {
+  outline: 2px solid var(--clr);
+}
+
+.label {
+  align-self: flex-start;
+  color: var(--clr);
+  font-weight: 600;
+}
+
+form .submit {
+  padding: 1rem 0.75rem;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  border-radius: 3rem;
+  background-color: var(--bg-dark);
+  color: var(--bg-light);
+  border: none;
+  cursor: pointer;
+  transition: all 300ms;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+form .submit:hover {
+  background-color: var(--clr);
+  color: var(--bg-dark);
+}
+
+.span {
+  text-decoration: none;
+  color: var(--bg-dark);
+}
+
+.span a {
+  color: var(--clr);
+}
+
+.dropdownMenu1 {
+  display: none;
+}
+
+.dropdownMenu ul li:hover .dropdownMenu1 {
+  display: block;
+  position: absolute;
   left: 120px;
   top: 28px;
-  background-color:rgb(68, 70, 84);;
-  }
-  
-  .mobilenavlinks:hover .dropdownMenu {
-    display: block;
-    position: absolute;
+  background-color: rgb(68, 70, 84);
+}
+
+.mobilenavlinks:hover .dropdownMenu {
+  display: block;
+  position: absolute;
   right: 10px;
-  background-color:rgb(68, 70, 84);;
+  background-color: rgb(68, 70, 84);
   padding: 15px;
-  }
+}
 
 .headerDesk {
   display: none;
 }
 
 .mobilenavlinks:hover {
-  background-color:rgb(154, 181, 240);
+  background-color: rgb(154, 181, 240);
   color: rgb(68, 70, 84);
-  max-width:150px;
+  max-width: 150px;
   border-radius: 25px;
   border: 2px solid rgb(0, 183, 255);
 }
 
 .mobilenavlinks a:hover {
   color: rgb(68, 70, 84);
-
 }
-
 
 @media all and (min-width: 768px) {
   .mobileMenuDiv {
@@ -297,69 +290,69 @@ main {
 
   .headerDesk {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     height: 72px;
     background-color: #19c37d;
+    padding: 0 25px;
   }
 
   .logo {
     font-size: 40px;
     font-weight: 800;
   }
-.navItem {
-  display: flex;
-  gap: 12px;
-}
+  .navItem {
+    display: flex;
+    gap: 12px;
+  }
 
-.navlinks {
-  text-decoration: none;
-  list-style: none;
-  position: relative;
-}
+  .navlinks {
+    text-decoration: none;
+    list-style: none;
+    position: relative;
+  }
 
-.navlinks a {
-  text-decoration: none;
-  font-size: 20px;
-  font-weight: 400;
-  color: #fff;
-}
+  .navlinks a {
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: 400;
+    color: #fff;
+  }
 
-.dropdownMenu {
-display:none;
+  .dropdownMenu {
+    display: none;
+  }
 
-}
+  .dropdownMenu ul {
+    display: block;
+    margin: 10px;
+  }
 
-.dropdownMenu ul{
-  display: block;
-  margin: 10px;
-}
+  .fas {
+    float: right;
+    margin-left: 10px;
+    padding-top: 3px;
+  }
 
-.fas {
-  float: right;
-  margin-left: 10px;
-  padding-top: 3px;
-}
+  .dropdownMenu1 {
+    display: none;
+  }
 
-.dropdownMenu1 {
-  display: none;
-}
+  .dropdownMenu ul li:hover .dropdownMenu1 {
+    display: block;
+    position: absolute;
+    left: 150px;
+    top: 28px;
+    background-color: rgb(218, 223, 252);
+    margin: 15px;
+  }
 
-.dropdownMenu ul li:hover .dropdownMenu1 {
-  display: block;
-  position: absolute;
-left: 150px;
-top: 28px;
-background-color:rgb(218, 223, 252);
-margin: 15px;
-}
-
-.navlinks:hover .dropdownMenu {
-  display: block;
-  position: absolute;
-left: 0;
-top: 100%;
-background-color:rgb(218, 223, 252);
-padding: 15px;
-}
+  .navlinks:hover .dropdownMenu {
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 100%;
+    background-color: rgb(218, 223, 252);
+    padding: 15px;
+  }
 }
