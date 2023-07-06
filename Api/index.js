@@ -16,12 +16,16 @@ app.use(cors({
 }));
 
 app.use(express.json());
+app.use(cookieParser());
 
-mongoose.connect('mongodb+srv://ekpenisiraphael:RGDJAzqGpAc3L496@cluster0.nqm5shy.mongodb.net/?retryWrites=true&w=majority', {
+mongoose.connect('mongodb+srv://ekpenisiraphael:RGDJAzqGpAc3L496@cluster0.nqm5shy.mongodb.net/mydatabase', {
   useNewUrlParser: true,
   useUnifiedTopology: true
+}).then(() => {
+  console.log('Connected to the database');
+}).catch((error) => {
+  console.log('Failed to connect to the database:', error);
 });
-app.use(cookieParser());
 
 app.post('/register', async (req, res) => {
   const { username, email, password } = req.body;
@@ -49,12 +53,12 @@ app.post('/login', async (req, res) => {
       return;
     }
 
-    const passPare = bcrypt.compareSync(password, userData.password);
+    const passMatch = bcrypt.compareSync(password, userData.password);
 
-    if (passPare) {
+    if (passMatch) {
       jwt.sign({ email, id: userData._id }, secret, {}, (err, token) => {
         if (err) throw err;
-        res.cookie('token', token).json('ok');
+        res.cookie('token', token, { httpOnly: true }).json('ok');
       });
     } else {
       res.status(400).json('Wrong credentials');
@@ -65,12 +69,22 @@ app.post('/login', async (req, res) => {
 });
 
 app.get('/profile', (req, res) => {
-  const {token} = req.cookies;
-  jwt.verify(token, secret, {}, (err, info) => {
-    if(err) throw err
-    res.json(info)
-  })
-})
+  const token = req.cookies.token;
+
+  if (!token) {
+    res.status(401).json('Unauthorized');
+    return;
+  }
+
+  jwt.verify(token, secret, (err, decoded) => {
+    if (err) {
+      res.status(401).json('Unauthorized');
+      return;
+    }
+
+    res.json(decoded);
+  });
+});
 
 app.listen(4000, () => {
   console.log('Server is listening on port 4000');
