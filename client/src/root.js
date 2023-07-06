@@ -9,17 +9,19 @@ import Technology from './Components/Technology/Technology'
 import Health from './Components/Health/Health'
 import Lifestyle from './Components/Lifestyle/Lifestyle'
 import Gramarlly from './Components/Gramarlly/Gramarlly'
+import Create from './Components/Create/Create'
+import userContextProvider from './userContext'
+
 
 const Root = () => {
   return (
-
+<userContextProvider>
     <Router>
       <header>
         <Header />
       </header>
 
-
-     <Routes>
+<Routes>
           <Route path="/" element={<Post />} />
           <Route path="/technology" element={<Technology />} />
           <Route path="/lifestyle" element={<Lifestyle />} />
@@ -28,8 +30,10 @@ const Root = () => {
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<SignUp />} />
           <Route path="/gramarlly" element={<Gramarlly />} />
+          <Route path="/create" element={<Create />} />
         </Routes>
            </Router>
+</userContextProvider>
 
   );
 };
