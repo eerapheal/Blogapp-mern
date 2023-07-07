@@ -10,12 +10,12 @@ import Health from './Components/Health/Health'
 import Lifestyle from './Components/Lifestyle/Lifestyle'
 import Gramarlly from './Components/Gramarlly/Gramarlly'
 import Create from './Components/Create/Create'
-import userContextProvider from './userContext'
+// import userContextProvider from './userContext'
 
 
 const Root = () => {
   return (
-<userContextProvider>
+// {/* <userContextProvider> */}
     <Router>
       <header>
         <Header />
@@ -33,7 +33,7 @@ const Root = () => {
           <Route path="/create" element={<Create />} />
         </Routes>
            </Router>
-</userContextProvider>
+// </userContextProvider>
 
   );
 };

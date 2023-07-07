@@ -82,7 +82,7 @@ app.get('/profile', (req, res) => {
       return;
     }
 
-    res.json(decoded);
+  res.json(decoded);  
   });
 });
 
