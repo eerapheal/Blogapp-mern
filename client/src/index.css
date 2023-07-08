@@ -42,6 +42,7 @@ main {
   max-width:150px;
   padding: 10px;
   border-radius: 25px;
+  color: #fff;
   border: 2px solid rgb(0, 183, 255);
 }
 
@@ -50,6 +51,16 @@ main {
   font-size: 20px;
   font-weight: 400;
   color: #fff;
+}
+
+.mobilenavlinksactive {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  gap: 15px;
+  cursor: pointer;
+  color: #fff;
+  text-decoration: none;
 }
 
 .mobileMenu {
@@ -124,6 +135,13 @@ main {
   .dropdownMenu ul{
     display: block;
     margin: 10px;
+  }
+
+.sport {
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: 400;
+    color: #fff;
   }
   
   .fas {

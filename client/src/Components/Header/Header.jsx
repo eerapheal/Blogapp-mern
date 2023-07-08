@@ -80,7 +80,7 @@ const Header = () => {
               </Link>
             </li>
             <li className="mobilenavlinks">
-              <div alt="treadingNews">
+              <div alt="treadingNews ">
                 Treading News <i className="fas fa-caret-down"></i>
               </div>
               <div className="dropdownMenu">
@@ -91,8 +91,8 @@ const Header = () => {
                     </Link>
                   </li>
                   <li>
-                    <div alt="Sport">
-                      Sport <i className="fas fa-caret-right"></i>
+                    <div alt="Sport" className="sport">
+                    <span>  Sport</span> <i className="fas fa-caret-right"></i>
                     </div>
                     <div className="dropdownMenu1">
                       <ul>
@@ -132,17 +132,25 @@ const Header = () => {
                 </ul>
               </div>
             </li>
-            <li className="mobilenavlinks">
-              <Link to="/login" alt="Login">
-                Login
-              </Link>
-            </li>
-            <li className="mobilenavlinks">
-              <Link to="/signup" alt="Signup" className="navlinks">
-                Sign Up
-              </Link>
-            </li>
           </ul>
+          <nav className=" mobilenavlinksactive">
+              {email ? (
+                <>
+                  <Link to="/create"  className=" mobilenavlinks">Make Post</Link>
+                  
+                  <a className="mobilenavlinks" onClick={logout}>Logout</a>
+                </>
+              ) : (
+                <>
+                  <Link to="/login" alt="Login" className=" mobilenavlinks">
+                    Login
+                  </Link>
+                  <Link to="/signup" alt="Signup" className="mobilenavlinks">
+                    Sign Up
+                  </Link>
+                </>
+              )}
+            </nav>
         </div>
       </div>
       <div className="headerDesk">
