@@ -325,6 +325,12 @@ main {
   color: #fff;
 }
 
+.navlinksactive {
+  display: flex;
+  gap: 15px;
+  cursor: pointer;
+}
+
 .navlinks  {
   text-decoration: none;
   font-size: 20px;

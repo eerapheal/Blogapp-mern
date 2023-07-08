@@ -1,17 +1,36 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext} from "react";
 import { Link } from "react-router-dom";
+import { UserContext } from '../../UserContext';
 
 const Header = () => {
-  const [email, setEmail] = useState("");
+   const { setUserInfo, userInfo } = useContext(UserContext);
+
   useEffect(() => {
     fetch("http://localhost:4000/profile", {
       credentials: "include",
-    }).then((response) => {
-      response.json().then((userInfo) => {
-        setEmail(userInfo.email);
+    })
+      .then((response) => response.json())
+      .then((userData) => {
+        updateUserInfo(userData);
+      })
+      .catch((error) => {
+        console.error("Error retrieving user profile:", error);
       });
-    });
   }, []);
+
+  const updateUserInfo = (userData) => {
+    setUserInfo(userData);
+  };
+
+    function logout() {
+    fetch("http://localhost:4000/logout", {
+      credentials: "include",
+      method: 'POST',
+    });
+    setUserInfo(null);
+  }
+
+  const email = userInfo?.email;
 
   const [burger_class, setBurgerClass] = useState("burger-bar unclicked");
   const [menu_class, setMenuClass] = useState("menu hidden");
@@ -202,13 +221,14 @@ const Header = () => {
                 </ul>
               </div>
             </li>
-            <li className="navlinks">
-              {email && (
+              <li className="navlinks navlinksactive">
+              {email ? (
                 <>
-                  <Link to="/create">make post</Link>
+                  <Link to="/create">Make Post</Link>
+                  
+                  <a className="navlinks" onClick={logout}>Logout</a>
                 </>
-              )}
-              {!email && (
+              ) : (
                 <>
                   <Link to="/login" alt="Login">
                     Login
