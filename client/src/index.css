@@ -42,6 +42,7 @@ main {
   max-width: 150px;
   padding: 10px;
   border-radius: 25px;
+  color: #fff;
   border: 2px solid rgb(0, 183, 255);
 }
 
@@ -50,6 +51,16 @@ main {
   font-size: 20px;
   font-weight: 400;
   color: #fff;
+}
+
+.mobilenavlinksactive {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  gap: 15px;
+  cursor: pointer;
+  color: #fff;
+  text-decoration: none;
 }
 
 .mobileMenu {
@@ -71,9 +82,9 @@ main {
 }
 
 .burger-bar {
-  margin: 4px 0;
-  width: 4em;
-  height: 0.5em;
+  margin: 3px 0;
+  width: 2.5em;
+  height: 0.4em;
   background-color: rgb(0, 183, 255);
   border-radius: 0.5em;
 }
@@ -95,8 +106,9 @@ main {
   display: inherit;
 }
 
-.burger-bar.clicked:nth-child(1) {
-  transform: rotate(50deg) translate(0.75em, 1.25em);
+
+.burger-bar.clicked:nth-child(1){
+  transform:  rotate(50deg) translate(0.2em, 1em);
   transition: ease-out 2s;
 }
 
@@ -105,8 +117,8 @@ main {
   transition: ease-out 2s;
 }
 
-.burger-bar.clicked:nth-child(3) {
-  transform: rotate(143deg) translate(-0.2em, 1em);
+.burger-bar.clicked:nth-child(3){
+  transform:  rotate(149deg) translate(0.2em, 1em);
   transition: ease-out 2s;
 }
 
@@ -116,8 +128,27 @@ main {
 }
 
 .dropdownMenu {
-  display: none;
-}
+  display:none;
+  
+  }
+  
+  .dropdownMenu ul{
+    display: block;
+    margin: 10px;
+  }
+
+.sport {
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: 400;
+    color: #fff;
+  }
+  
+  .fas {
+    float: right;
+    margin-left: 10px;
+    padding-top: 3px;
+  }
 
 .dropdownMenu ul {
   display: block;
@@ -161,17 +192,19 @@ main {
   color: #fff;
 }
 
-form {
-  --bg-light: #efefef;
-  --bg-dark: #707070;
-  --clr: #58bc82;
-  --clr-alpha: #9c9c9c60;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1rem;
-  width: 100%;
-}
+  form {
+    --bg-light: #efefef;
+    --bg-dark: #707070;
+    --clr: #58BC82;
+    --clr-alpha: #9c9c9c60;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+    margin-bottom: 120px;
+    /* position: relative; */
+  }
 
 .formTitle {
   color: var(--bg-light);
@@ -285,7 +318,8 @@ form .submit:hover {
 
   main {
     max-width: 650px;
-    margin: 20px auto;
+    margin: 0 auto;
+    padding-top: 70px;
   }
 
   .headerDesk {
@@ -319,10 +353,23 @@ form .submit:hover {
     color: #fff;
   }
 
-  .dropdownMenu {
-    display: none;
-  }
+.navlinksactive {
+  display: flex;
+  gap: 15px;
+  cursor: pointer;
+}
 
+.navlinks  {
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: 400;
+  color: #fff;
+} 
+
+.dropdownMenu {
+display:none;
+
+ }
   .dropdownMenu ul {
     display: block;
     margin: 10px;

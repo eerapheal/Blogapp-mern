@@ -1,36 +1,25 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const SignUp = () => {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const navigate = useNavigate();
 
   const register = async (ev) => {
     ev.preventDefault();
-   
-    const response = await fetch('http://localhost:4000/register', {
-      method: 'POST',
+
+    const response = await fetch("http://localhost:4000/register", {
+      method: "POST",
       body: JSON.stringify({ username, email, password }),
       headers: {
-        'Content-Type': 'application/json'
-      }
-    })
+        "Content-Type": "application/json",
+      },
+    });
     if (response.status === 200) {
-      alert('resgistration successful');
-    }else {
-      alert('resgistration failed');
+      navigate("/login"); // Redirect to the login page
     }
-      // .then(response => response.json())
-      // .then(data => {
-      //   // Handle the successful response
-      // })
-      // .catch(error => {
-      //   console.error('An error occurred:', error);
-      //   // Handle the error and display an appropriate message to the user
-      // });
-
-      
   };
 
   return (
