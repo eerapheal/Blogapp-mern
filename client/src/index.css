@@ -82,9 +82,9 @@ main {
 }
 
 .burger-bar {
-  margin: 4px 0;
-  width: 4em;
-  height: 0.5em;
+  margin: 3px 0;
+  width: 2.5em;
+  height: 0.4em;
   background-color: rgb(0, 183, 255);
   border-radius: 0.5em;
 }
@@ -108,7 +108,7 @@ main {
 
 
 .burger-bar.clicked:nth-child(1){
-  transform:  rotate(50deg) translate(0.75em, 1.25em);
+  transform:  rotate(50deg) translate(0.2em, 1em);
   transition: ease-out 2s;
 }
 
@@ -118,7 +118,7 @@ main {
 }
 
 .burger-bar.clicked:nth-child(3){
-  transform:  rotate(143deg) translate(-0.2em, 1em);
+  transform:  rotate(149deg) translate(0.2em, 1em);
   transition: ease-out 2s;
 }
 
