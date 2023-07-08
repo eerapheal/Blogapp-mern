@@ -1,9 +1,10 @@
 import React, { useState, useEffect, useContext} from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { UserContext } from '../../UserContext';
 
 const Header = () => {
    const { setUserInfo, userInfo } = useContext(UserContext);
+   const navigate = useNavigate();
 
   useEffect(() => {
     fetch("http://localhost:4000/profile", {
@@ -28,6 +29,8 @@ const Header = () => {
       method: 'POST',
     });
     setUserInfo(null);
+      navigate("/"); // Redirect to the login page
+    
   }
 
   const email = userInfo?.email;
