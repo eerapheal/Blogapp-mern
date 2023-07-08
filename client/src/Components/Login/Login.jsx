@@ -1,11 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { Link, Navigate } from "react-router-dom";
-
+import { UserContext }  from '../../UserContext'
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [redirect, setRedirect] = useState(false);
-
+  const { setUserInfo } = useContext(UserContext);
   const login = async (ev) => {
     ev.preventDefault();
 
@@ -20,7 +20,10 @@ const Login = () => {
 
     if (response.ok) {
       // Handle successful login, e.g., save token to local storage
-      setRedirect(true);
+      response.json().then(userInfo => {
+        setUserInfo(userInfo)
+        setRedirect(true);
+      })
     }
   };
 
