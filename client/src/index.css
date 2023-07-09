@@ -300,7 +300,7 @@ form .submit:hover {
   padding: 15px;
 }
 
-form input[type="title"],
+form input[type="text"],
 form input[type="summary"],
 form input[type="file"] {
   border-radius: 0.5rem;
@@ -310,7 +310,7 @@ form input[type="file"] {
   display: flex;
   align-items: center;
   /* gap: 0.1rem; */
-  background-color: var(--clr-alpha);
+  background-color: #fff;
   outline: 2px solid var(--bg-dark);
 }
 
