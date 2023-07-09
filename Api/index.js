@@ -5,6 +5,9 @@ const User = require('./model/User.js');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const cookieParser = require('cookie-parser');
+const multer = require('multer');
+const uploadMiddleWare = multer({ dest: 'uploads/' })
+
 
 const app = express();
 const salt = bcrypt.genSaltSync(10);
@@ -91,7 +94,12 @@ app.get('/profile', (req, res) => {
 
 app.post('/logout', (req, res) => {
   res.cookie('token', '').json('ok')
-})
+});
+
+app.post('/create', uploadMiddleWare.single('file'), (req, res) => {
+  res.json({ file: req.file });
+});
+
 
 app.listen(4000, () => {
   console.log('Server is listening on port 4000');
