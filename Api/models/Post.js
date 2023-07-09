@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const { Schema, model } = mongoose;
 
-const CreateSchema = new Schema(
+const PostSchema = new Schema(
   {
     title: String,
     summary: String,
@@ -13,6 +13,6 @@ const CreateSchema = new Schema(
   }
 );
 
-const CreateModel = model("create", CreateSchema);
+const postModel = model("Post", PostSchema);
 
-module.export = CreateModel;
+module.exports = postModel;
