@@ -114,20 +114,33 @@ app.post("/post", uploadMiddleWare.single("file"), async (req, res) => {
     fs.renameSync(path, newPath);
 
     const { title, summary, content } = req.body;
+    const token = req.cookies.token;
+    jwt.verify(token, secret, async (err, decoded) => {
+      if (err) {
+        res.status(401).json("Unauthorized");
+        return;
+      }
+      
+      const postData = {
+        title,
+        summary,
+        content,
+        cover: newPath,
+        author: decoded.id,
+      };
 
-    const postData = {
-      title,
-      summary,
-      content,
-      cover: newPath,
-    };
-
-    const createdPost = await Post.create(postData);
-    res.json(createdPost);
+      const createdPost = await Post.create(postData);
+      res.json(createdPost);
+    });
   } catch (error) {
     res.status(500).json({ error: 'An error occurred while creating the post' });
   }
-}); 
+});
+
+
+app.get('/post', async (req, res) => {
+res.json(await Post.find());
+})
 
 app.listen(4000, () => {
   console.log("Server is listening on port 4000");
