@@ -139,8 +139,13 @@ app.post("/post", uploadMiddleWare.single("file"), async (req, res) => {
 
 
 app.get('/post', async (req, res) => {
-res.json(await Post.find());
-})
+  try {
+    const posts = await Post.find();
+    res.json(posts);
+  } catch (error) {
+    res.status(500).json({ error: 'An error occurred while retrieving posts' });
+  }
+});
 
 app.listen(4000, () => {
   console.log("Server is listening on port 4000");
