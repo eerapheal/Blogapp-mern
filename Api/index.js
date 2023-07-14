@@ -113,37 +113,32 @@ app.post("/post", uploadMiddleWare.single("file"), async (req, res) => {
     const newPath = path + "." + ext;
     fs.renameSync(path, newPath);
 
-    const { title, summary, content } = req.body;
     const token = req.cookies.token;
     jwt.verify(token, secret, async (err, decoded) => {
-      if (err) {
-        res.status(401).json("Unauthorized");
-        return;
-      }
-      
-      const postData = {
+      if (err) throw err;
+      const { title, summary, content } = req.body;
+      const createdPost = await Post.create({
         title,
         summary,
         content,
         cover: newPath,
         author: decoded.id,
-      };
-
-      const createdPost = await Post.create(postData);
+      });
       res.json(createdPost);
     });
   } catch (error) {
-    res.status(500).json({ error: 'An error occurred while creating the post' });
+    res.status(500).json("An error occurred");
   }
 });
 
-
-app.get('/post', async (req, res) => {
+app.get("/post", async (req, res) => {
   try {
     const posts = await Post.find();
     res.json(posts);
   } catch (error) {
-    res.status(500).json({ error: 'An error occurred while retrieving posts' });
+    res
+      .status(500)
+      .json({ error: "An error occurred while retrieving posts" });
   }
 });
 
