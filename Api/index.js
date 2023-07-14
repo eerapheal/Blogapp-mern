@@ -23,6 +23,7 @@ app.use(
 
 app.use(express.json());
 app.use(cookieParser());
+app.use('/uploads', express.static(__dirname + '/uploads'));
 
 mongoose
   .connect(
@@ -92,11 +93,7 @@ app.get("/profile", (req, res) => {
   }
 
   jwt.verify(token, secret, (err, decoded) => {
-    if (err) {
-      res.status(401).json("Unauthorized");
-      return;
-    }
-
+    if (err) throw err;
     res.json(decoded);
   });
 });
@@ -131,9 +128,12 @@ app.post("/post", uploadMiddleWare.single("file"), async (req, res) => {
   }
 });
 
-app.get("/post", async (req, res) => {
+app.get("/posts", async (req, res) => {
   try {
-    const posts = await Post.find();
+    const posts = await Post.find()
+    .populate('author', 'username')
+    .sort({createdAt: -1})
+    .limit(300)
     res.json(posts);
   } catch (error) {
     res

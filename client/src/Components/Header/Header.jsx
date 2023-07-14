@@ -139,7 +139,7 @@ const Header = () => {
           <nav className=" mobilenavlinksactive">
               {email ? (
                 <>
-                  <Link to="/create"  className=" mobilenavlinks">Make Post</Link>
+                  <Link to="/createPost"  className=" mobilenavlinks">Make Post</Link>
                   
                   <a className="mobilenavlinks" onClick={logout}>Logout</a>
                 </>
@@ -235,7 +235,7 @@ const Header = () => {
               <li className="navlinks navlinksactive">
               {email ? (
                 <>
-                  <Link to="/create">Make Post</Link>
+                  <Link to="/createPost">Make Post</Link>
                   
                   <a className="navlinks" onClick={logout}>Logout</a>
                 </>
