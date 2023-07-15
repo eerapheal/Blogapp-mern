@@ -141,6 +141,12 @@ app.get("/posts", async (req, res) => {
       .json({ error: "An error occurred while retrieving posts" });
   }
 });
+app.get('/post/:id', async (req, res) => {
+  const { id } = req.params;
+  const postDoc = await Post.findById(id).populate('author', 'username');
+  res.json(postDoc);
+});
+
 
 app.listen(4000, () => {
   console.log("Server is listening on port 4000");

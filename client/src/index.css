@@ -166,6 +166,11 @@ main {
   padding-top: 3px;
 }
 
+.post a{
+  text-decoration: none;
+  color: inherit;
+}
+
 .info {
   color: bisque;
   padding: 5px;

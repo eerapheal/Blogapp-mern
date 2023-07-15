@@ -10,6 +10,7 @@ import Health from "./Components/Health/Health";
 import Lifestyle from "./Components/Lifestyle/Lifestyle";
 import Gramarlly from "./Components/Gramarlly/Gramarlly";
 import CreatePost from "./Components/CreatePost/CreatePost";
+import ContentPage from "./Components/ContentPage/ContentPage"
 // import userContextProvider from './userContext'
 
 const Root = () => {
@@ -30,6 +31,7 @@ const Root = () => {
         <Route path="/signup" element={<SignUp />} />
         <Route path="/gramarlly" element={<Gramarlly />} />
         <Route path="/createPost" element={<CreatePost />} />
+        <Route path="/post/:id" element={< ContentPage />} />
       </Routes>
     </Router>
     // </userContextProvider>
