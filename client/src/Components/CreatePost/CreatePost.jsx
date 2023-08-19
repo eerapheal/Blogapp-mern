@@ -86,14 +86,9 @@ const CreatePost = () => {
           modules={modules}
           formats={formats}
           style={{
-            // maxWidth: "650px",
-            // minWidth: '650px',
-            // height: "200px",
             backgroundColor: "#fff",
             backgroundSize: "cover",
-            // color: "#fff",
             marginBottom: "8px",
-            // @media all and (min-width: 768px) {}
           }}
         />
         <button className="submit" type="submit">
