@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { formatISO9075 } from 'date-fns';
-
+import './Post.css'
 const Post = ({_id, title, summary, cover, content, createdAt, author }) => {
   let date = new Date(); // Initialize with a default value
 
@@ -14,12 +14,26 @@ const Post = ({_id, title, summary, cover, content, createdAt, author }) => {
 
   return (
     <main>
-      <div className="post">
-      
-        <div className="mainPost">
-        <div className="imgpost">
-        <Link to={'/post/${_id}'}>
-            <img src={'http://localhost:4000/'+cover} alt="cover" /> 
+      <div className="pst">
+        
+      <div className="newsCard stack ">
+            <Link to={`/post/${_id}`}>
+              <img className="imgpost" src={`http://localhost:4000/${cover}`} alt="cover" />
+            </Link>
+          <div className="cardContent">
+            <h2 className="postTitle">{title}</h2>
+            <p className="info">
+              {author && <span className="author">{author.username}</span>}
+              {' '}
+              <time>{formatISO9075(date)}</time>
+            </p>
+            <p className="postParagh">{summary}</p>
+          </div>
+        </div>
+        {/* <div className="mainPost">
+          <div className="imgpost">
+            <Link to={`/post/${_id}`}>
+              <img src={`http://localhost:4000/${cover}`} alt="cover" />
             </Link>
           </div>
           <div className="pst">
@@ -31,7 +45,7 @@ const Post = ({_id, title, summary, cover, content, createdAt, author }) => {
             </p>
             <p className="postParagh">{summary}</p>
           </div>
-        </div>
+        </div> */}
       </div>
     </main>
   );
