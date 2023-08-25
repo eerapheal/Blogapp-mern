@@ -1,0 +1,20 @@
+.topic {
+    color: #fff;
+    /* padding: 20rem; */
+}
+
+ 
+.HeadlineWraper {
+    
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+    gap: 0.7rem;
+  }
+
+  .contanier {
+    padding: 2rem 0.7rem;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    text-align: center;
+  }
