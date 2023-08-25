@@ -1,39 +1,5 @@
 import React, { useState } from "react";
 import { Navigate } from "react-router-dom";
-import ReactQuill from "react-quill";
-import "react-quill/dist/quill.snow.css";
-
-const modules = {
-  toolbar: [
-    [{ header: [1, 2, 3, 4, 5, 6, false] }],
-    ["bold", "italic", "underline", "strike"],
-    [{ align: [] }],
-
-    [{ list: "ordered" }, { list: "bullet" }],
-    [{ indent: "-1" }, { indent: "+1" }],
-
-    ["link", "image", "video"],
-    [{ color: [] }, { background: [] }],
-  ],
-};
-
-const formats = [
-  "bold",
-  "italic",
-  "underline",
-  "strike",
-  "align",
-  "list",
-  "indent",
-  "size",
-  "header",
-  "link",
-  "image",
-  "video",
-  "color",
-  "background",
-  "clean",
-];
 
 const CreatePost = () => {
   const [title, setTitle] = useState("");
@@ -79,18 +45,16 @@ const CreatePost = () => {
           onChange={(ev) => setSummary(ev.target.value)}
         />
         <input type="file" onChange={(ev) => setFiles(ev.target.files)} />
-        <ReactQuill
+        <textarea
           placeholder={" Write Your Content Here"}
           value={content}
-          onChange={(newValue) => setContent(newValue)}
-          modules={modules}
-          formats={formats}
+          onChange={(ev) => setContent(ev.target.value)}
           style={{
             backgroundColor: "#fff",
             backgroundSize: "cover",
             marginBottom: "8px",
           }}
-        />
+        ></textarea>
         <button className="submit" type="submit">
           Create post
         </button>
