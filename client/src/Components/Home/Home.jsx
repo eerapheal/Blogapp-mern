@@ -38,8 +38,8 @@ const Home = () => {
               // className='featured'
             />
           ))}
-           <NewsList />
       </div>
+      <NewsList />
     </div>
   );
 };
