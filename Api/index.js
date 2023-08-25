@@ -23,7 +23,7 @@ app.use(
 
 app.use(express.json());
 app.use(cookieParser());
-app.use('/uploads', express.static(__dirname + '/uploads'));
+app.use("/uploads", express.static(__dirname + "/uploads"));
 
 mongoose
   .connect(
@@ -113,13 +113,18 @@ app.post("/post", uploadMiddleWare.single("file"), async (req, res) => {
     const token = req.cookies.token;
     jwt.verify(token, secret, async (err, decoded) => {
       if (err) throw err;
+
       const { title, summary, content } = req.body;
+
+      // Ensure that author is a valid ObjectId or null (if it's undefined)
+      const author = decoded.id || null;
+
       const createdPost = await Post.create({
         title,
         summary,
         content,
         cover: newPath,
-        author: decoded.id,
+        author: author, // Assign the validated author value
       });
       res.json(createdPost);
     });
@@ -128,25 +133,36 @@ app.post("/post", uploadMiddleWare.single("file"), async (req, res) => {
   }
 });
 
-app.get("/posts", async (req, res) => {
+app.get("/post", async (req, res) => {
   try {
     const posts = await Post.find()
-    .populate('author', 'username')
-    .sort({createdAt: -1})
-    .limit(300)
+      .populate("author", "username")
+      .sort({ createdAt: -1 })
+      .limit(300);
     res.json(posts);
   } catch (error) {
-    res
-      .status(500)
-      .json({ error: "An error occurred while retrieving posts" });
+    res.status(500).json({ error: "An error occurred while retrieving posts" });
   }
 });
-app.get('/post/:id', async (req, res) => {
-  const { id } = req.params;
-  const postDoc = await Post.findById(id).populate('author', 'username');
-  res.json(postDoc);
-});
+app.get("/post/:id", async (req, res) => {
+  const postId = req.params.id; // Access the post ID from the URL parameter
+  try {
+    const postDoc = await Post.findById(postId).populate("author", [
+      "username",
+    ]);
 
+    if (!postDoc) {
+      return res.status(404).json({ error: "Post not found" });
+    }
+
+    res.json(postDoc);
+  } catch (error) {
+    console.error(error);
+    res
+      .status(500)
+      .json({ error: "An error occurred while retrieving the post" });
+  }
+});
 
 app.listen(4000, () => {
   console.log("Server is listening on port 4000");
