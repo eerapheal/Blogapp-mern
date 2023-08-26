@@ -25,10 +25,8 @@ const NewsList = ({ news, loading, error, fetchNews }) => {
             
             <img className='newsImg'src={article.urlToImage} alt="Article Thumbnail" />
             <div className='cardContent'>
-              <h3>{article.title}</h3>
-            {/* <p>{article.description}</p> */}
-            {/* <p className='newsContent'>{article.content }</p> */}
-            <p>Date {article.publishedAt}</p>
+              <p>{article.title}</p>
+              <p>Date {article.publishedAt}</p>
             <p>
               <a href={article.url}>
                 Read more

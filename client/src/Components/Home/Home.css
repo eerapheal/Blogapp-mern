@@ -1,6 +1,8 @@
 .topic {
-    color: #fff;
-    /* padding: 20rem; */
+    color: #6f05fa;
+    padding: 1rem 0 2rem 0;
+    font-size: 35px;
+    font-weight: 700;
 }
 
  
@@ -12,9 +14,8 @@
   }
 
   .contanier {
-    padding: 2rem 0.7rem;
+    padding: 5rem 0.7rem;
     display: flex;
     flex-direction: column;
-    /* justify-content: center; */
     text-align: center;
   }
