@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { formatISO9075 } from 'date-fns';
+import { formatISO9075 } from "date-fns";
 // import './Post.css'
 
-const Sport = ({_id, title, summary, cover, content, createdAt, author }) => {
-      let date = new Date(); // Initialize with a default value
+const Sport = ({ _id, title, summary, cover, content, createdAt, author }) => {
+  let date = new Date(); // Initialize with a default value
 
-  if (typeof createdAt === 'string' && !isNaN(Date.parse(createdAt))) {
+  if (typeof createdAt === "string" && !isNaN(Date.parse(createdAt))) {
     date = new Date(createdAt);
   } else if (createdAt instanceof Date) {
     date = createdAt;
@@ -28,25 +28,30 @@ const Sport = ({_id, title, summary, cover, content, createdAt, author }) => {
         console.error("Error fetching sport posts:", error);
       });
   }, []);
-  
 
   return (
-    <div style={{padding: '75px'}}>
+    <div style={{ padding: "75px" }}>
       <h1 className="sportHeader">Sport Posts</h1>
       <ul>
         {sportPosts.map((post) => (
-          <li key={post._id}
-          >
-          <Link to={`/post/${post._id}`}>
-          <img className="imgsport" src={`http://localhost:4000/${post.cover}`} alt="cover" />
-        </Link>
-            <h2 className="sportTittle">{post.title}</h2>
-            <p>{post.summary}</p>
-            <p className="sportauthor">
-              {author && <span className="author">{author.username}</span>}
-              {' '}
-              <time>{formatISO9075(date)}</time>
-            </p>
+          <li key={post._id}>
+            <Link to={`/post/${post._id}`}>
+              <img
+                className="imgsport"
+                src={`http://localhost:4000/${post.cover}`}
+                alt="cover"
+              />
+            </Link>
+            <div>
+              <Link to={`/post/${post._id}`}>
+                <h2 className="sportTittle">{post.title}</h2>
+                <p>{post.summary}</p>
+                <p className="sportauthor">
+                  {author && <span className="author">{author.username}</span>}{" "}
+                  <time>{formatISO9075(date)}</time>
+                </p>
+              </Link>
+            </div>
           </li>
         ))}
       </ul>
