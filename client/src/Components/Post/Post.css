@@ -13,6 +13,7 @@
   }
   .postCard {
     aspect-ratio: 1 / 1;
+    overflow: hidden;
   }
   
   .stack {
@@ -49,6 +50,7 @@
       rgba(14, 28, 29, 0.9) 84.03%
     );
     border-radius: 10px;
+    /* overflow: hidden; */
   }
   
   .postTitle {
