@@ -10,12 +10,11 @@ import Health from "./Components/Health/Health";
 import Lifestyle from "./Components/Lifestyle/Lifestyle";
 import Gramarlly from "./Components/Gramarlly/Gramarlly";
 import CreatePost from "./Components/CreatePost/CreatePost";
-import ContentPage from "./Components/ContentPage/ContentPage"
-// import userContextProvider from './userContext'
+import ContentPage from "./Components/ContentPage/ContentPage";
+import Sport from "./Components/Sport/Sport";
 
 const Root = () => {
   return (
-    // {/* <userContextProvider> */}
     <Router>
       <header>
         <Header />
@@ -31,10 +30,10 @@ const Root = () => {
         <Route path="/signup" element={<SignUp />} />
         <Route path="/gramarlly" element={<Gramarlly />} />
         <Route path="/createPost" element={<CreatePost />} />
-        <Route path="/post/:id" element={< ContentPage />} />
+        <Route path="/post/:id" element={<ContentPage />} />
+        <Route path="/sport" element={<Sport />} />
       </Routes>
     </Router>
-    // </userContextProvider>
   );
 };
 
