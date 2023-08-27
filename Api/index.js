@@ -3,6 +3,7 @@ const cors = require("cors");
 const mongoose = require("mongoose");
 const User = require("./models/User.js");
 const Post = require("./models/Post.js");
+const categoriesRouter = require('./controller/categories');
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const cookieParser = require("cookie-parser");
@@ -24,6 +25,7 @@ app.use(
 app.use(express.json());
 app.use(cookieParser());
 app.use("/uploads", express.static(__dirname + "/uploads"));
+app.use('/categories', categoriesRouter);
 
 mongoose
   .connect(
@@ -114,7 +116,7 @@ app.post("/post", uploadMiddleWare.single("file"), async (req, res) => {
     jwt.verify(token, secret, async (err, decoded) => {
       if (err) throw err;
 
-      const { title, summary, content } = req.body;
+      const { title, summary, content, categoryId } = req.body; // Add categoryId
 
       // Ensure that author is a valid ObjectId or null (if it's undefined)
       const author = decoded.id || null;
@@ -124,7 +126,8 @@ app.post("/post", uploadMiddleWare.single("file"), async (req, res) => {
         summary,
         content,
         cover: newPath,
-        author: author, // Assign the validated author value
+        author: author,
+        category: categoryId, // Assign the selected category
       });
       res.json(createdPost);
     });
@@ -132,6 +135,7 @@ app.post("/post", uploadMiddleWare.single("file"), async (req, res) => {
     res.status(500).json("An error occurred");
   }
 });
+
 
 app.get("/post", async (req, res) => {
   try {
