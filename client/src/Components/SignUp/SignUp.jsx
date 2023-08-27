@@ -23,7 +23,7 @@ const SignUp = () => {
   };
 
   return (
-    <main>
+    <main style={{padding: '70px'}}>
       <form className="form" onSubmit={register}>
         <h1 className="formTitle">Sign up new user</h1>
         <span className="input-span">
