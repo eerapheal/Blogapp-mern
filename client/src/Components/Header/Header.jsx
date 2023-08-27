@@ -161,7 +161,7 @@ const Header = () => {
       <div className="headerDesk">
         <div>
           <Link to="/" className="logo" alt="Logo">
-            Sant<span className="logoB">B</span>log
+            Gulun<span className="logoB">B</span>log
           </Link>
         </div>
         <nav>
