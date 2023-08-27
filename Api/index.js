@@ -10,6 +10,7 @@ const cookieParser = require("cookie-parser");
 const multer = require("multer");
 const uploadMiddleWare = multer({ dest: "uploads/" });
 const fs = require("fs");
+const sportRouter = require('./controller/sport');
 
 const app = express();
 const salt = bcrypt.genSaltSync(10);
@@ -26,6 +27,7 @@ app.use(express.json());
 app.use(cookieParser());
 app.use("/uploads", express.static(__dirname + "/uploads"));
 app.use('/categories', categoriesRouter);
+app.use('/sport', sportRouter);
 
 mongoose
   .connect(
