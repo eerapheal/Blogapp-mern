@@ -17,7 +17,7 @@ const NewsList = ({ news, loading, error, fetchNews }) => {
   }
 
   return (
-    <div  className='container'>
+    <div style={{paddingTop: '75px'}} className='container'>
       <h2 className='Headlines'>Top Headlines</h2>
       <ul  className='HeadlineWraper'>
         {news.map((article) => (
