@@ -34,6 +34,7 @@
     object-fit: cover;
     border-radius: 10px;
     border: 2px solid rgb(116, 111, 114);
+    background-color: rgba(25, 136, 127, 0.5);
   }
   
   .postContent {
