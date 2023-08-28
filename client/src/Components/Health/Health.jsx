@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { formatISO9075 } from "date-fns";
-// import './Post.css'
+import './Health.css'
 
 const Health = ({ _id, title, summary, cover, content, createdAt, author }) => {
   let date = new Date(); // Initialize with a default value
@@ -30,21 +30,21 @@ const Health = ({ _id, title, summary, cover, content, createdAt, author }) => {
   }, []);
 
   return (
-    <div style={{ padding: "75px" }}>
+    <div style={{ padding: "75px 15px 0" }}>
       <h1 className="healthHeader">Health Posts</h1>
-      <ul>
+      <ul className="mainHeath">
         {healthPosts.map((post) => (
-          <li key={post._id}>
+          <li key={post._id} className="card">
             <Link to={`/post/${post._id}`}>
               <img
-                className="imghealth"
+                className="image"
                 src={`http://localhost:4000/${post.cover}`}
                 alt="cover"
               />
             </Link>
-            <div>
+            <div className="card__info">
               <Link to={`/post/${post._id}`}>
-                <h2 className="healthTittle">{post.title}</h2>
+                <h4 className="healthTittle">{post.title}</h4>
                 <p>{post.summary}</p>
                 <p className="healthauthor">
                   {author && <span className="author">{author.username}</span>}{" "}
