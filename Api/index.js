@@ -12,6 +12,7 @@ const uploadMiddleWare = multer({ dest: "uploads/" });
 const fs = require("fs");
 const sportRouter = require('./controller/sport');
 const healthRouter = require('./controller/health');
+const technologyRouter = require('./controller/technologies');
 
 const app = express();
 const salt = bcrypt.genSaltSync(10);
@@ -30,6 +31,8 @@ app.use("/uploads", express.static(__dirname + "/uploads"));
 app.use('/categories', categoriesRouter);
 app.use('/sport', sportRouter);
 app.use('/health', healthRouter);
+app.use('/technologies', technologyRouter);
+
 mongoose
   .connect(
     "mongodb+srv://ekpenisiraphael:RGDJAzqGpAc3L496@cluster0.nqm5shy.mongodb.net/mydatabase",
