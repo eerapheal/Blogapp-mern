@@ -13,6 +13,7 @@ const fs = require("fs");
 const sportRouter = require('./controller/sport');
 const healthRouter = require('./controller/health');
 const technologyRouter = require('./controller/technologies');
+const lifeStyleRouter = require('./controller/lifeStyle')
 
 const app = express();
 const salt = bcrypt.genSaltSync(10);
@@ -32,6 +33,7 @@ app.use('/categories', categoriesRouter);
 app.use('/sport', sportRouter);
 app.use('/health', healthRouter);
 app.use('/technologies', technologyRouter);
+app.use('/lifeStyle', lifeStyleRouter);
 
 mongoose
   .connect(
