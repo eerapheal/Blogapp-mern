@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Navigate } from "react-router-dom";
+import "./CreatePost.css"
 
 const CreatePost = () => {
   const [title, setTitle] = useState("");
@@ -51,7 +52,7 @@ const CreatePost = () => {
   }
 
   return (
-    <main>
+    <main className="createHeader">
       <form onSubmit={makePost}>
         <input
           type="text"
@@ -59,7 +60,7 @@ const CreatePost = () => {
           value={title}
           onChange={(ev) => setTitle(ev.target.value)}
         />
-        <input
+        <input calssName="createHeader"
           type="summary"
           placeholder={"Summary"}
           value={summary}
