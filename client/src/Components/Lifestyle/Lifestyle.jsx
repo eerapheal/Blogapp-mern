@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { formatISO9075 } from "date-fns";
-// import './Post.css'
+import './LifeStyle.css'
 
 const LifeStyle = ({ _id, title, summary, cover, content, createdAt, author }) => {
   let date = new Date(); // Initialize with a default value
@@ -32,9 +32,9 @@ const LifeStyle = ({ _id, title, summary, cover, content, createdAt, author }) =
   return (
     <div style={{ padding: "75px" }}>
       <h1 className="lifeStyleHeader">LifeStyle Posts</h1>
-      <ul>
+      <ul className='LifeStyle'>
         {lifeStylePosts.map((post) => (
-          <li key={post._id}>
+          <li key={post._id} className="LifeStyleCard">
             <Link to={`/post/${post._id}`}>
               <img
                 className="imglifeStyle"
@@ -42,7 +42,7 @@ const LifeStyle = ({ _id, title, summary, cover, content, createdAt, author }) =
                 alt="cover"
               />
             </Link>
-            <div>
+            <div className='lifeStyleContent'>
               <Link to={`/post/${post._id}`}>
                 <h2 className="lifeStyleTittle">{post.title}</h2>
                 <p>{post.summary}</p>
