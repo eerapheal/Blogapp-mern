@@ -30,11 +30,12 @@ const LifeStyle = ({ _id, title, summary, cover, content, createdAt, author }) =
   }, []);
 
   return (
-    <div style={{ padding: "75px" }}>
+    <div style={{ padding: "75px 20px 0" }}>
       <h1 className="lifeStyleHeader">LifeStyle Posts</h1>
       <ul className='LifeStyle'>
         {lifeStylePosts.map((post) => (
           <li key={post._id} className="LifeStyleCard">
+           <div className="imgDiv">
             <Link to={`/post/${post._id}`}>
               <img
                 className="imglifeStyle"
@@ -42,6 +43,7 @@ const LifeStyle = ({ _id, title, summary, cover, content, createdAt, author }) =
                 alt="cover"
               />
             </Link>
+            </div>
             <div className='lifeStyleContent'>
               <Link to={`/post/${post._id}`}>
                 <h2 className="lifeStyleTittle">{post.title}</h2>
