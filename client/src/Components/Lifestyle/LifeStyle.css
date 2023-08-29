@@ -1,19 +1,30 @@
 .LifeStyle {
-
+    display: grid;
+    padding: 20px;
+    grid-gap: 40px;
+    grid-template-columns: repeat(auto-fit minmax(400px 1fr));
 }
 
 .LifeStyleCard {
-
+background-color: #1c1b29;
+border-radius: 20px;
+box-shadow: 0 0 30px rgba(0,0,0,0,18, green, blue, alpha);
+}
+.imgDiv {
+    position: relative;
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
 }
 
 .imglifeStyle {
-
+width: 100%;
+display: block;
+border-radius: 20px 20px 0 0;
 }
 
 .lifeStyleContent {
-
+/* background-color: black; */
 }
 
 .lifeStyleTittle {
-    
+
 }
