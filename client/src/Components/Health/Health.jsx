@@ -44,8 +44,8 @@ const Health = ({ _id, title, summary, cover, content, createdAt, author }) => {
             </Link>
             <div className="card__info">
               <Link to={`/post/${post._id}`}>
-                <h4 className="healthTittle">{post.title}</h4>
-                <p>{post.summary}</p>
+                <h4 className="title">{post.title}</h4>
+                <p className="content">{post.summary}</p>
                 <p className="healthauthor">
                   {author && <span className="author">{author.username}</span>}{" "}
                   <time>{formatISO9075(date)}</time>
