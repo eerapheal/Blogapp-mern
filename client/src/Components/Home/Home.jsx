@@ -3,7 +3,7 @@ import Post from "../Post/Post";
 import Ads from '../Ads/Ads'
 import "./Home.css";
 import NewsList from '../NewsList/NewsList';
-import Health from '../Health/Health'
+import HomeHealth from './HomeHealth'
 
 const Home = () => {
   const [posts, setPosts] = useState([]);
@@ -41,8 +41,7 @@ const Home = () => {
           ))}
       </div>
       <NewsList />
-      <h3>Health</h3>
-      <Health />
+      <HomeHealth />
     </div>
   );
 };
