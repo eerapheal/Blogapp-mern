@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { formatISO9075 } from "date-fns";
-// import './Post.css'
+import './Technology.css'
 
 const Technology = ({ _id, title, summary, cover, content, createdAt, author }) => {
   let date = new Date(); // Initialize with a default value
@@ -32,9 +32,9 @@ const Technology = ({ _id, title, summary, cover, content, createdAt, author }) 
   return (
     <div style={{ padding: "75px" }}>
       <h1 className="technologyHeader">Technology Posts</h1>
-      <ul>
+      <ul className="mainTech">
         {technologyPosts.map((post) => (
-          <li key={post._id}>
+          <li className="techCard" key={post._id}>
             <Link to={`/post/${post._id}`}>
               <img
                 className="imgtechnology"
@@ -42,10 +42,10 @@ const Technology = ({ _id, title, summary, cover, content, createdAt, author }) 
                 alt="cover"
               />
             </Link>
-            <div>
+            <div className="card__info">
               <Link to={`/post/${post._id}`}>
                 <h2 className="technologyTittle">{post.title}</h2>
-                <p>{post.summary}</p>
+                <p className="techSummary">{post.summary}</p>
                 <p className="technologyauthor">
                   {author && <span className="author">{author.username}</span>}{" "}
                   <time>{formatISO9075(date)}</time>
