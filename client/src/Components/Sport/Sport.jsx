@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { formatISO9075 } from "date-fns";
-// import './Post.css'
+import './Sport.css'
 
 const Sport = ({ _id, title, summary, cover, content, createdAt, author }) => {
   let date = new Date(); // Initialize with a default value
@@ -31,10 +31,11 @@ const Sport = ({ _id, title, summary, cover, content, createdAt, author }) => {
 
   return (
     <div style={{ padding: "75px" }}>
-      <h1 className="sportHeader">Sport Posts</h1>
+      <h1 className="sportHeader">Sport</h1>
       <ul>
         {sportPosts.map((post) => (
-          <li key={post._id}>
+          <li key={post._id} className="sportCard">
+             <div className="sportImgDiv">
             <Link to={`/post/${post._id}`}>
               <img
                 className="imgsport"
@@ -42,10 +43,11 @@ const Sport = ({ _id, title, summary, cover, content, createdAt, author }) => {
                 alt="cover"
               />
             </Link>
-            <div>
+            </div>
+            <div className="lifeStyleContent">
               <Link to={`/post/${post._id}`}>
                 <h2 className="sportTittle">{post.title}</h2>
-                <p>{post.summary}</p>
+                <p className="sportSummary">{post.summary}</p>
                 <p className="sportauthor">
                   {author && <span className="author">{author.username}</span>}{" "}
                   <time>{formatISO9075(date)}</time>
