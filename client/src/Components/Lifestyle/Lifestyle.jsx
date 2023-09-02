@@ -45,13 +45,13 @@ const LifeStyle = ({ _id, title, summary, cover, content, createdAt, author }) =
             </Link>
             </div>
             <div className='lifeStyleContent'>
-              <Link to={`/post/${post._id}`}>
-                <h2 className="lifeStyleTittle">{post.title}</h2>
-                <p>{post.summary}</p>
-                <p className="lifeStyleauthor">
-                  {author && <span className="author">{author.username}</span>}{" "}
+            <p className="lifeStyleauthor">
+                  {author && <span className="author">{post.author.username}</span>}{" "}
                   <time>{formatISO9075(date)}</time>
                 </p>
+              <Link to={`/post/${post._id}`}>
+                <h2 className="lifeStyleTittle"  maxlength="100">{post.title}</h2>
+                <p className="lifestySummary">{post.summary}</p>
               </Link>
             </div>
           </li>
