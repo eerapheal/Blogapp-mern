@@ -1,14 +1,8 @@
 .adsTop {
-display: grid;
-grid-template-columns: 1fr 1fr;
-gap: 30px;
-
-}
-
-.adsLeft {
-    width: 100%;
+display: block;
 }
 
 .adsRight {
     width: 100%;
+    object-fit: cover;
 }
