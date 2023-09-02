@@ -1,10 +1,10 @@
-import React, { useState, useEffect, useContext} from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { UserContext } from '../../UserContext';
-import './Header.css'
+import { UserContext } from "../../UserContext";
+import "./Header.css";
 const Header = () => {
-   const { setUserInfo, userInfo } = useContext(UserContext);
-   const navigate = useNavigate();
+  const { setUserInfo, userInfo } = useContext(UserContext);
+  const navigate = useNavigate();
 
   useEffect(() => {
     fetch("http://localhost:4000/profile", {
@@ -23,14 +23,13 @@ const Header = () => {
     setUserInfo(userData);
   };
 
-    function logout() {
+  function logout() {
     fetch("http://localhost:4000/logout", {
       credentials: "include",
-      method: 'POST',
+      method: "POST",
     });
     setUserInfo(null);
-      navigate("/"); // Redirect to the login page
-    
+    navigate("/"); // Redirect to the login page
   }
 
   const email = userInfo?.email;
@@ -60,13 +59,17 @@ const Header = () => {
             <div className={burger_class}></div>
           </div>
           <div>
-            <Link to="/" className="logo" alt="Logo">
-              Sant<span className="logoB">B</span>log
-            </Link>
+            <Link to="/" alt="Logo">
+             <span className="logo" > Sant<span className="logoB">M</span>agazi</span>            </Link>
           </div>
         </nav>
         <div className={menu_class}>
           <ul className="mobilenavItem">
+            <li>
+              <Link to="/sport" alt="Technology" className="navlinks">
+                <span> Sport</span>
+              </Link>
+            </li>
             <li className="mobilenavlinks">
               <Link to="/technology" alt="Technology" className="navlinks">
                 Technology
@@ -83,10 +86,10 @@ const Header = () => {
               </Link>
             </li>
             <li className="mobilenavlinks">
-              <Link to='/treadingnews' alt="treandingNews">
-              <div alt="treadingNews ">
-                Treading News <i className="fas fa-caret-down"></i>
-              </div>
+              <Link to="/treadingnews" alt="treandingNews">
+                <div alt="treadingNews ">
+                  Treading <i className="fas fa-caret-down"></i>
+                </div>
               </Link>
               <div className="dropdownMenu">
                 <ul>
@@ -94,35 +97,6 @@ const Header = () => {
                     <Link to="/" alt="Global news">
                       General News
                     </Link>
-                  </li>
-                  <li>
-                    <div alt="Sport" className="sport">
-                    <span>  Sport</span> <i className="fas fa-caret-right"></i>
-                    </div>
-                    <div className="dropdownMenu1">
-                      <ul>
-                        <li>
-                          <Link to="/" alt="Football">
-                            Football
-                          </Link>
-                        </li>
-                        <li>
-                          <Link to="/" alt="UFC/MMA">
-                            UFC/MMA
-                          </Link>
-                        </li>
-                        <li>
-                          <Link to="/" alt="Rugby">
-                            Rugby
-                          </Link>
-                        </li>
-                        <li>
-                          <Link to="/" alt="Cricket">
-                            Cricket
-                          </Link>
-                        </li>
-                      </ul>
-                    </div>
                   </li>
                   <li>
                     <Link to="/" alt="Entern">
@@ -139,33 +113,42 @@ const Header = () => {
             </li>
           </ul>
           <nav className=" mobilenavlinksactive">
-              {email ? (
-                <>
-                  <Link to="/createPost"  className=" mobilenavlinks">Make Post</Link>
-                  
-                  <a className="mobilenavlinks" onClick={logout}>Logout</a>
-                </>
-              ) : (
-                <>
-                  <Link to="/login" alt="Login" className=" mobilenavlinks">
-                    Login
-                  </Link>
-                  <Link to="/signup" alt="Signup" className="mobilenavlinks">
-                    Sign Up
-                  </Link>
-                </>
-              )}
-            </nav>
+            {email ? (
+              <>
+                <Link to="/createPost" className=" mobilenavlinks">
+                  Make Post
+                </Link>
+
+                <a className="mobilenavlinks" onClick={logout}>
+                  Logout
+                </a>
+              </>
+            ) : (
+              <>
+                <Link to="/login" alt="Login" className=" mobilenavlinks">
+                  Login
+                </Link>
+                <Link to="/signup" alt="Signup" className="mobilenavlinks">
+                  Sign Up
+                </Link>
+              </>
+            )}
+          </nav>
         </div>
       </div>
       <div className="headerDesk">
         <div>
-          <Link to="/" className="logo" alt="Logo">
-            Gulun<span className="logoB">B</span>log
+          <Link to="/"alt="Logo">
+          <span className="logo" > Sant<span className="logoB">M</span>agazi</span>
           </Link>
         </div>
         <nav>
           <ul className="navItem">
+            <li className="navlinks">
+              <Link to="/sport" alt=" Technology" className="navlinks">
+                <span> Sport</span>
+              </Link>
+            </li>
             <li className="navlinks">
               <Link to="/Technology" alt=" Technology" className="navlinks">
                 Technology
@@ -182,10 +165,10 @@ const Header = () => {
               </Link>
             </li>
             <li className="navlinks">
-              <Link to='/treadingnews' alt="treandingNews">
-              <div className="navlinks">
-                Treading News <i className="fas fa-caret-down"></i>
-              </div>
+              <Link to="/treadingnews" alt="treandingNews">
+                <div className="navlinks">
+                  Treadings <i className="fas fa-caret-down"></i>
+                </div>
               </Link>
               <div className="dropdownMenu">
                 <ul>
@@ -236,12 +219,14 @@ const Header = () => {
                 </ul>
               </div>
             </li>
-              <li className="navlinks navlinksactive">
+            <li className="navlinks navlinksactive">
               {email ? (
                 <>
                   <Link to="/createPost">Make Post</Link>
-                  
-                  <a className="navlinks" onClick={logout}>Logout</a>
+
+                  <a className="navlinks" onClick={logout}>
+                    Logout
+                  </a>
                 </>
               ) : (
                 <>
