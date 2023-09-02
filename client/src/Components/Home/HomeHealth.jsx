@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { formatISO9075 } from "date-fns";
-import './Health.css'
+import './HomeHealth.css'
 
 const HomeHealth = ({ _id, title, summary, cover, content, createdAt, author }) => {
   let date = new Date(); // Initialize with a default value
