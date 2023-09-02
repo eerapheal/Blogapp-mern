@@ -9,16 +9,17 @@
     justify-content: center;
     position: relative;
     color: #212121;
-    border: 2px solid #ab4b38;
+    box-shadow: 0 0.25rem 1rem rgb(0 0 0 / 0.1);
     transition: all .5s ease;
+    border: 2px solid rgb(116, 111, 114);
   }
   
   
   .image {
     width: 100%;
-    height: 148px;
-    background: rgb(223,235,56);
+    height: 155px;
     background: rgb(56,235,226);
+    object-fit: cover;
     background: linear-gradient(163deg, rgba(56,235,226,1) 0%, rgba(134,221,245,1) 50%);
   }
   
@@ -31,22 +32,30 @@
     justify-content: center;
     padding: 15px;
     gap: 3px;
-  }
-  
-  .page {
-    font-size: 13px;
-    font-weight: 100;
-  }
-  
-  .title {
     text-decoration: none;
-    font-weight: 600;
-    font-size: 17px;
+    list-style: none;
+    text-align: start;
+  }
+  
+  .Healthtitle {
+    text-decoration: none;
+    font-weight: 300;
+    line-height: 20px;
     color: black;
+    font-size: 90px;
   }
   
   .content {
-    font-size: 14px;
+    font-size: 20px;
+    color: #212121;
+    font-weight: 300;
+    line-height: 20px;
+    padding: 3px;
+  }
+  .healthauthor {
+    font-size: 20px;
+    color: #212121;
+    font-weight: 300;
   }
   
   .card:hover {
@@ -71,6 +80,8 @@
          gap: 0.2rem;
         grid-template-columns: 1fr 1fr;
       }
+
+      
 }
 
 @media (min-width: 48em) {
@@ -79,13 +90,6 @@
         grid-template-columns: 1fr 1fr;
       }
 }
-
-/* @media (min-width: 48em) {
-    .mainHeath {
-        display: grid;
-        grid-template-columns: 1fr  1fr;
-      }
-} */
 
 @media (min-width: 62em) {
     .mainHeath {

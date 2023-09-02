@@ -30,7 +30,7 @@ const Health = ({ _id, title, summary, cover, content, createdAt, author }) => {
   }, []);
 
   return (
-    <div style={{ padding: "75px 15px 0" }}>
+    <div style={{ padding: "75px 15px 15px" }}>
       <h1 className="healthHeader">Health Posts</h1>
       <ul className="mainHeath">
         {healthPosts.map((post) => (
@@ -44,7 +44,7 @@ const Health = ({ _id, title, summary, cover, content, createdAt, author }) => {
             </Link>
             <div className="card__info">
               <Link to={`/post/${post._id}`}>
-                <h4 className="title">{post.title}</h4>
+                <h4 className="Healthtitle">{post.title}</h4>
                 <p className="content">{post.summary}</p>
                 <p className="healthauthor">
                   {author && <span className="author">{author.username}</span>}{" "}
