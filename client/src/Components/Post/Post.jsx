@@ -21,12 +21,12 @@ const Post = ({_id, title, summary, cover, content, createdAt, author }) => {
             </Link>
           <div className="postContent">
             <h2 className="postTitle">{title}</h2>
+            <p className="postParagh">{summary}</p>
             <p className="info">
               {author && <span className="author">{author.username}</span>}
-              {' '}
+              {' '} 
               <time>{formatISO9075(date)}</time>
             </p>
-            <p className="postParagh">{summary}</p>
           </div>
         </div>   
       </div>
