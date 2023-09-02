@@ -1,0 +1,53 @@
+.LifeStyle {
+    display: grid;
+    padding: 20px;
+    grid-gap: 40px;
+    grid-template-columns: repeat(auto-fit minmax(400px 1fr));
+}
+
+.sportCard {
+background-color: #3c395f;
+border-radius: 20px;
+box-shadow: 0 0 30px rgba(0,0,0,0,18, green, blue, alpha);
+}
+.sportImgDiv {
+    position: relative;
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+}
+
+.imglifeStyle {
+width: 100%;
+display: block;
+border-radius: 20px 20px 0 0;
+}
+
+.sportImgDiv:after {
+    content:"";
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 20px 20px 0 0;
+    opacity: 0.7;
+    }
+
+    .sportCard>.sportImgDiv::after {
+        background-image: linear-gradient(135deg, #e7e7eb,#ec6bb4);
+    }
+
+.lifeStyleContent {
+padding: 10px;
+}
+
+.sportSummary {
+    color: #fff;
+    padding: 5px;
+}
+
+.sportTittle {
+    color: #fff;
+}
+.sportauthor {
+    color: rgb(139, 133, 129);
+}
