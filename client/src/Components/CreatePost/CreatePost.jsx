@@ -62,6 +62,7 @@ const CreatePost = () => {
         />
         <input calssName="createHeader"
           type="summary"
+          maxlength="130"
           placeholder={"Summary"}
           value={summary}
           onChange={(ev) => setSummary(ev.target.value)}
@@ -84,7 +85,7 @@ const CreatePost = () => {
           style={{
             backgroundColor: "#fff",
             backgroundSize: "cover",
-            marginBottom: "8px",
+            marginBottom: "",
           }}
         ></textarea>
         <button className="submit" type="submit">
