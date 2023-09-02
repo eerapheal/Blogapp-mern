@@ -1,0 +1,33 @@
+.mainContents {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    text-align: start;
+    padding: 100px 20px;
+}
+.postContentTitle {
+    padding: 30px 0 3px 0;
+    color:  #19c37d;
+    Font-size: 38px;
+    font-weight: 700;
+}
+
+.postcontentParagh {
+    color: #212121;
+    padding-top: 4px;
+}
+
+.contentimg {
+   width: 100%;
+   height: 30%;
+    /* aspect-ratio: 1/1; */
+    object-fit: cover;
+}
+
+.postSummay {
+    color: #212121;
+    padding-top: 5px;
+    Font-size: 28px;
+}

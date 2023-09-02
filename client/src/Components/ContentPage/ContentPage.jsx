@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-
+import "./ContentPage.css";
 const ContentPage = () => {
   const [postInfo, setPostInfo] = useState(null);
   const { id } = useParams();
@@ -26,19 +26,19 @@ const ContentPage = () => {
   }
 
   return (
-    <div className="post">
-    <div className="mainPost">
-      <div className="imgpost">
-          <img src={`http://localhost:4000/${postInfo.cover}`} alt="cover" />
-      </div>
-      <div className="pst">
-        <h2 className="postTitle">{postInfo.title}</h2>
-       
-        <p className="postParagh">{postInfo.summary}</p>
-        <p className="postParagh">{postInfo.content}</p>
+    <div className="mainContent">
+      <div className="mainContents">
+        <div className="contentimg">
+          <img  className="contentimg" src={`http://localhost:4000/${postInfo.cover}`} alt="cover" />
+        </div>
+        <div className="pst">
+          <h2 className="postContentTitle">{postInfo.title}</h2>
+
+          <p className="postSummay">{postInfo.summary}</p>
+          <p className="postcontentParagh">{postInfo.content}</p>
+        </div>
       </div>
     </div>
-  </div>
   );
 };
 
