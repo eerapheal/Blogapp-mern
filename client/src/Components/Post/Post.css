@@ -5,8 +5,8 @@
   }
   
   .info {
-    color: bisque;
-    padding: 5px;
+    color: rgb(139, 133, 129);
+    /* padding: 2px; */
     font-size: 12px;
     font-weight: 200;
     font-family: "inter";
@@ -51,19 +51,32 @@
       rgba(14, 28, 29, 0.9) 84.03%
     );
     border-radius: 10px;
-    /* overflow: hidden; */
   }
   
   .postTitle {
-    font-size: 25px;
+    font-size: 28px;
     font-weight: 500;
     line-height: 25px;
-    color: aquamarine;
+    color:  #04fcbe;
   }
   
   .postParagh {
-    font-size: 15px;
-    font-weight: 400;
-    line-height: 18px;
+    font-size: 22px;
+    font-weight: 300;
+    line-height: 20px;
     color: #fff;
+    padding: 5px;
+  }
+
+  .postParagh::after {
+    content:"...";
+  }
+
+  .postParagh::first-letter {
+    font-size: 17px;
+    font-weight: 700;
+  }
+
+  .imgpost:hover {
+    filter: brightness(.8);
   }
