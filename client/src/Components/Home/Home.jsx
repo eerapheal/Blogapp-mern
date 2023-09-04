@@ -1,21 +1,17 @@
 import React from "react";
-import PostList from "../Post/Post";
-import Ads from '../Ads/Ads'
+import Post from "../Post/Post";
+import Ads from "../Ads/Ads";
 import "./Home.css";
-import NewsList from '../NewsList/NewsList';
-import HomeHealth from './HomeHealth'
+import NewsList from "../NewsList/NewsList";
 
 const Home = () => {
   return (
-    <div className='contanier'>
+    <div className="contanier">
       <Ads />
       <h1 className="topic">SANT EXCLUSIVE</h1>
-      <div className="HeadlineWraper featured">
-     
-      </div>
-      <PostList />
+      <div className=""></div>
+      <Post />
       <NewsList />
-      <HomeHealth />
     </div>
   );
 };

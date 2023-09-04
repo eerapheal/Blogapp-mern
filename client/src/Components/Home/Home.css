@@ -5,14 +5,6 @@
     font-weight: 700;
 }
 
- 
-.HeadlineWraper {
-    
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
-    gap: 0.7rem;
-  }
-
   .contanier {
     padding: 5rem 0.7rem;
     display: flex;
