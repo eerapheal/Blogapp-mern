@@ -1,9 +1,17 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { formatISO9075 } from "date-fns";
-import './Technology.css'
+import "./Technology.css";
 
-const Technology = ({ _id, title, summary, cover, content, createdAt, author }) => {
+const Technology = ({
+  _id,
+  title,
+  summary,
+  cover,
+  content,
+  createdAt,
+  author,
+}) => {
   let date = new Date(); // Initialize with a default value
 
   if (typeof createdAt === "string" && !isNaN(Date.parse(createdAt))) {
@@ -30,7 +38,7 @@ const Technology = ({ _id, title, summary, cover, content, createdAt, author }) 
   }, []);
 
   return (
-    <div style={{ padding: "75px" }}>
+    <div style={{ padding: "75px 25px 30px" }}>
       <h1 className="technologyHeader">Technology Posts</h1>
       <ul className="mainTech">
         {technologyPosts.map((post) => (
