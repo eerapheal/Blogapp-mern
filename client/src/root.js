@@ -12,7 +12,7 @@ import Gramarlly from "./Components/Gramarlly/Gramarlly";
 import CreatePost from "./Components/CreatePost/CreatePost";
 import ContentPage from "./Components/ContentPage/ContentPage";
 import Sport from "./Components/Sport/Sport";
-
+import Footer from './Components/Footer/Footer'
 const Root = () => {
   return (
     <Router>
@@ -33,6 +33,10 @@ const Root = () => {
         <Route path="/post/:id" element={<ContentPage />} />
         <Route path="/sport" element={<Sport />} />
       </Routes>
+
+      <footer>
+        <Footer />
+      </footer>
     </Router>
   );
 };
