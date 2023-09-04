@@ -4,12 +4,11 @@
   padding: 4rem 0;
 }
 .Headlines {
-  color:#19c37d;
+  color: #19c37d;
   padding: 0 0 2rem 0;
   font-size: 35px;
   font-weight: 700;
 }
-
 
 .HeadlineWraper {
   display: grid;
@@ -35,7 +34,7 @@
   aspect-ratio: 1 / 1;
   object-fit: cover;
   border-radius: 10px;
-    border: 2px solid rgb(116, 111, 114);
+  border: 2px solid rgb(116, 111, 114);
 }
 
 @media (min-width: 30em) {
@@ -61,6 +60,9 @@
   font-weight: 400;
   line-height: 18px;
   color: #fff;
-  background-image: linear-gradient(179.4deg, rgba(38, 38, 38, 0) 0.81%, rgba(14, 28, 29, 0.9) 84.03%);
-
+  background-image: linear-gradient(
+    179.4deg,
+    rgba(38, 38, 38, 0) 0.81%,
+    rgba(14, 28, 29, 0.9) 84.03%
+  );
 }
