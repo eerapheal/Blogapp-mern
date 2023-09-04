@@ -1,82 +1,81 @@
+.postContanier {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  gap: 0.7rem;
+}
+.post a {
+  text-decoration: none;
+  color: inherit;
+}
 
-.post a{
-    text-decoration: none;
-    color: inherit;
-  }
-  
-  .info {
-    color: rgb(139, 133, 129);
-    /* padding: 2px; */
-    font-size: 12px;
-    font-weight: 200;
-    font-family: "inter";
-  }
-  .postCard {
-    aspect-ratio: 1 / 1;
-    overflow: hidden;
-  }
-  
-  .stack {
-    display: grid;
-  }
-  
-  .stack > * {
-    grid-column: 1 / 2;
-    grid-row: 1 / 1;
-  }
-  
-  
-  
-  
-  .imgpost {
-    width: 100%;
-    aspect-ratio: 1 / 1;
-    object-fit: cover;
-    border-radius: 10px;
-    border: 2px solid rgb(116, 111, 114);
-    background-color: rgba(25, 136, 127, 0.5);
-  }
-  
-  .postContent {
-    box-shadow: 0 0.25rem 1rem rgb(0 0 0 / 0.1);
-    align-self: end;
-    z-index: 1;
-    margin: 0.4rem ;
-    text-align:start;
-    padding: 0.5rem;
-    color: aqua;
-    background-image: linear-gradient(
-      179.4deg,
-      rgba(38, 38, 38, 0) 0.81%,
-      rgba(14, 28, 29, 0.9) 84.03%
-    );
-    border-radius: 10px;
-  }
-  
-  .postTitle {
-    font-size: 28px;
-    font-weight: 500;
-    line-height: 25px;
-    color:  #04fcbe;
-  }
-  
-  .postParagh {
-    font-size: 22px;
-    font-weight: 300;
-    line-height: 20px;
-    color: #fff;
-    padding: 5px;
-  }
+.info {
+  color: rgb(139, 133, 129);
+  font-size: 18px;
+  font-weight: 500;
+}
+.postCard {
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+}
 
-  .postParagh::after {
-    content:"...";
-  }
+.stack {
+  display: grid;
+}
 
-  .postParagh::first-letter {
-    font-size: 17px;
-    font-weight: 700;
-  }
+.stack > * {
+  grid-column: 1 / 2;
+  grid-row: 1 / 1;
+}
 
-  .imgpost:hover {
-    filter: brightness(.8);
-  }
+.imgpost {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 10px;
+  border: 2px solid rgb(116, 111, 114);
+  background-color: rgba(25, 136, 127, 0.5);
+}
+
+.postContent {
+  box-shadow: 0 0.25rem 1rem rgb(0 0 0 / 0.1);
+  align-self: end;
+  z-index: 1;
+  margin: 0.4rem;
+  text-align: start;
+  padding: 0.5rem;
+  color: aqua;
+  background-image: linear-gradient(
+    179.4deg,
+    rgba(38, 38, 38, 0) 0.81%,
+    rgba(14, 28, 29, 0.9) 84.03%
+  );
+  border-radius: 10px;
+}
+
+.postTitle {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 25px;
+  color: #04fcbe;
+}
+
+.postParagh {
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 20px;
+  color: #fff;
+  padding: 5px;
+}
+
+.postParagh::after {
+  content: "...";
+}
+
+.postParagh::first-letter {
+  font-size: 17px;
+  font-weight: 700;
+}
+
+.imgpost:hover {
+  filter: brightness(0.8);
+}
