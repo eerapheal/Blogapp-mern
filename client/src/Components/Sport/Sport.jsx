@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { formatISO9075 } from "date-fns";
-import './Sport.css'
+import "./Sport.css";
 
 const Sport = ({ _id, title, summary, cover, content, createdAt, author }) => {
   let date = new Date(); // Initialize with a default value
@@ -30,21 +30,21 @@ const Sport = ({ _id, title, summary, cover, content, createdAt, author }) => {
   }, []);
 
   return (
-    <div style={{ padding: "75px" }}>
+    <div style={{ padding: "75px 25px 30px" }}>
       <h1 className="sportHeader">Sport</h1>
-      <ul>
+      <ul className="sportdiv">
         {sportPosts.map((post) => (
           <li key={post._id} className="sportCard">
-             <div className="sportImgDiv">
-            <Link to={`/post/${post._id}`}>
-              <img
-                className="imgsport"
-                src={`http://localhost:4000/${post.cover}`}
-                alt="cover"
-              />
-            </Link>
+            <div className="sportImgDiv">
+              <Link to={`/post/${post._id}`}>
+                <img
+                  className="imgsport"
+                  src={`http://localhost:4000/${post.cover}`}
+                  alt="cover"
+                />
+              </Link>
             </div>
-            <div className="lifeStyleContent">
+            <div className="sportContent">
               <Link to={`/post/${post._id}`}>
                 <h2 className="sportTittle">{post.title}</h2>
                 <p className="sportSummary">{post.summary}</p>
