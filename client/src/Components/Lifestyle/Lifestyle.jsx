@@ -1,9 +1,17 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { formatISO9075 } from "date-fns";
-import './LifeStyle.css'
+import "./LifeStyle.css";
 
-const LifeStyle = ({ _id, title, summary, cover, content, createdAt, author }) => {
+const LifeStyle = ({
+  _id,
+  title,
+  summary,
+  cover,
+  content,
+  createdAt,
+  author,
+}) => {
   let date = new Date(); // Initialize with a default value
 
   if (typeof createdAt === "string" && !isNaN(Date.parse(createdAt))) {
@@ -30,27 +38,31 @@ const LifeStyle = ({ _id, title, summary, cover, content, createdAt, author }) =
   }, []);
 
   return (
-    <div style={{ padding: "75px 20px 0" }}>
+    <div style={{ padding: "75px 25px 30px" }}>
       <h1 className="lifeStyleHeader">LifeStyle Posts</h1>
-      <ul className='LifeStyle'>
+      <ul className="LifeStyle">
         {lifeStylePosts.map((post) => (
           <li key={post._id} className="LifeStyleCard">
-           <div className="imgDiv">
-            <Link to={`/post/${post._id}`}>
-              <img
-                className="imglifeStyle"
-                src={`http://localhost:4000/${post.cover}`}
-                alt="cover"
-              />
-            </Link>
-            </div>
-            <div className='lifeStyleContent'>
-            <p className="lifeStyleauthor">
-                  {author && <span className="author">{post.author.username}</span>}{" "}
-                  <time>{formatISO9075(date)}</time>
-                </p>
+            <div className="imgDiv">
               <Link to={`/post/${post._id}`}>
-                <h2 className="lifeStyleTittle"  maxlength="100">{post.title}</h2>
+                <img
+                  className="imglifeStyle"
+                  src={`http://localhost:4000/${post.cover}`}
+                  alt="cover"
+                />
+              </Link>
+            </div>
+            <div className="lifeStyleContent">
+              <p className="lifeStyleauthor">
+                {author && (
+                  <span className="author">{post.author.username}</span>
+                )}{" "}
+                <time>{formatISO9075(date)}</time>
+              </p>
+              <Link to={`/post/${post._id}`}>
+                <h2 className="lifeStyleTittle" maxlength="100">
+                  {post.title}
+                </h2>
                 <p className="lifestySummary">{post.summary}</p>
               </Link>
             </div>
