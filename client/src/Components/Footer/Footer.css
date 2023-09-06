@@ -1,0 +1,96 @@
+/* Mobile Styles (Up to 767px) */
+.footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center; /* Center content on mobile */
+  }
+  
+  .footer-content {
+    padding: 0 20px;
+    color: #fff;
+  }
+  
+  .footer-logo h1 {
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: 400;
+    color: #fff;
+  }
+  
+  .logoB {
+    color: #a81919;
+    font-size: 40px;
+    font-weight: 700;
+  }
+  
+  .footer-links ul {
+    margin-top: 20px; /* Add some space between sections */
+  }
+  
+  .footer-links ul li {
+    margin-bottom: 10px; /* Add space between list items */
+  }
+  
+  .footer-links ul li a {
+    font-size: 16px; /* Smaller font for mobile */
+    color: #fff;
+  }
+  
+  .footer-social h3 {
+    font-size: 18px; /* Smaller font for mobile */
+    margin-top: 20px; /* Add space between sections */
+  }
+  
+  .footer-social ul {
+    margin-top: 10px; /* Add space between sections */
+  }
+  
+  .footer-social ul li {
+    display: inline;
+    margin-right: 10px;
+  }
+  
+  .footer-social ul li a {
+    font-size: 24px;
+    color: #fff;
+  }
+  
+  .footer-bottom p {
+    font-size: 12px; /* Smaller font for mobile */
+    /* margin-top: 20px;  */
+  }
+  
+  /* Media Query for Larger Screens */
+  @media (min-width: 768px) {
+    .footer-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  
+    .footer-logo h1 {
+      font-size: 24px;
+    }
+  
+    .footer-links ul {
+      display: flex;
+    }
+  
+    .footer-links ul li {
+      margin: 0 20px; /* Increase spacing between list items */
+    }
+  
+    .footer-social h3 {
+      display: none; /* Hide "Follow Us" heading on larger screens */
+    }
+  
+    .footer-social ul {
+      margin-top: 0;
+    }
+  
+    .footer-bottom p {
+      margin-top: 0;
+    }
+  }
+  
