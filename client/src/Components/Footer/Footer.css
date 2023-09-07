@@ -14,36 +14,28 @@
   .footer-logo h1 {
     text-decoration: none;
     font-size: 20px;
-    font-weight: 400;
+    font-weight: 500;
     color: #fff;
   }
   
   .logoB {
     color: #a81919;
-    font-size: 40px;
+    font-size: 30px;
     font-weight: 700;
   }
   
-  .footer-links ul {
-    margin-top: 20px; /* Add some space between sections */
-  }
-  
-  .footer-links ul li {
-    margin-bottom: 10px; /* Add space between list items */
-  }
-  
   .footer-links ul li a {
-    font-size: 16px; /* Smaller font for mobile */
+    font-size: 16px;
     color: #fff;
   }
   
   .footer-social h3 {
-    font-size: 18px; /* Smaller font for mobile */
-    margin-top: 20px; /* Add space between sections */
+    font-size: 18px; 
+    margin-top: 10px; 
   }
   
   .footer-social ul {
-    margin-top: 10px; /* Add space between sections */
+    margin-top: 10px; 
   }
   
   .footer-social ul li {
@@ -57,8 +49,7 @@
   }
   
   .footer-bottom p {
-    font-size: 12px; /* Smaller font for mobile */
-    /* margin-top: 20px;  */
+    font-size: 12px;
   }
   
   /* Media Query for Larger Screens */
@@ -78,11 +69,11 @@
     }
   
     .footer-links ul li {
-      margin: 0 20px; /* Increase spacing between list items */
+      margin: 0 20px; 
     }
   
     .footer-social h3 {
-      display: none; /* Hide "Follow Us" heading on larger screens */
+      display: none;
     }
   
     .footer-social ul {

@@ -65,8 +65,8 @@ const Header = () => {
         </nav>
         <div className={menu_class}>
           <ul className="mobilenavItem">
-            <li>
-              <Link to="/sport" alt="Technology" className="navlinks">
+            <li className="mobilenavlinks">
+              <Link to="/sport" alt="sport" className="navlinks">
                 <span> Sport</span>
               </Link>
             </li>

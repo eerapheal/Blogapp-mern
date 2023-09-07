@@ -13,6 +13,10 @@ const  Footer  = () => {
             <li><a href="/">Home</a></li>
             <li><a href="/about">About</a></li>
             <li><a href="/contact">Contact</a></li>
+            <li><a href="/">FQA</a></li>
+            <li><a href="/">Our policy</a></li>
+            <li><a href="/">Cookies policy</a></li>
+            <li><a href="/">Adverties</a></li>
           </ul>
         </div>
         <div className="footer-social">

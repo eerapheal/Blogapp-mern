@@ -1,8 +1,8 @@
 
 .logo {
     text-decoration: none;
-    font-size: 20px;
-    font-weight: 400;
+    font-size: 25px;
+    font-weight: 500;
     color: #fff;
     /* font-family: "Fasthand", sans-serif; */
   }
@@ -14,7 +14,7 @@
   
   .logoB {
     color: #a81919;
-    font-size: 40px;
+    font-size: 30px;
     font-weight: 700;
   }
   
@@ -74,18 +74,18 @@
   
   .burger-bar {
     margin: 3px 0;
-    width: 2.5em;
+    width: 2.6em;
     height: 0.4em;
     background-color: rgb(0, 183, 255);
     border-radius: 0.5em;
   }
   
   .menu {
+    position: fixed;
     width: 50%;
-    min-height: 100vh;
+    height: 100vh;
     background-color: rgb(154, 181, 240);
-    position: absolute;
-    top: 10%;
+    top: 13%;
     z-index: 4;
   }
   
@@ -109,7 +109,7 @@
   }
   
   .burger-bar.clicked:nth-child(3){
-    transform:  rotate(149deg) translate(0.2em, 1em);
+    transform:  rotate(149deg) translate(0.3em, 1em);
     transition: ease-out 2s;
   }
   
