@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { Navigate } from "react-router-dom";
 import "./CreatePost.css";
-import ReactQuill from 'react-quill';
-import 'react-quill/dist/quill.snow.css';
+import ReactQuill from "react-quill";
+import "react-quill/dist/quill.snow.css";
 
 const CreatePost = () => {
   const [title, setTitle] = useState("");
@@ -53,22 +53,34 @@ const CreatePost = () => {
     return <Navigate to={"/"} />;
   }
 
-  const   modules = {
+  const modules = {
     toolbar: [
-      [{ 'header': [1, 2, false] }],
-      ['bold', 'italic', 'underline','strike', 'blockquote'],
-      [{'list': 'ordered'}, {'list': 'bullet'}, {'indent': '-1'}, {'indent': '+1'}],
-      ['link', 'image'],
-      ['clean']
+      [{ header: [1, 2, false] }],
+      ["bold", "italic", "underline", "strike", "blockquote"],
+      [
+        { list: "ordered" },
+        { list: "bullet" },
+        { indent: "-1" },
+        { indent: "+1" },
+      ],
+      ["link", "image"],
+      ["clean"],
     ],
-  }
+  };
 
-const  formats = [
-    'header',
-    'bold', 'italic', 'underline', 'strike', 'blockquote',
-    'list', 'bullet', 'indent',
-    'link', 'image'
-  ]
+  const formats = [
+    "header",
+    "bold",
+    "italic",
+    "underline",
+    "strike",
+    "blockquote",
+    "list",
+    "bullet",
+    "indent",
+    "link",
+    "image",
+  ];
 
   return (
     <main className="createHeader">
@@ -79,7 +91,8 @@ const  formats = [
           value={title}
           onChange={(ev) => setTitle(ev.target.value)}
         />
-        <input calssName="createHeader"
+        <input
+          calssName="createHeader"
           type="summary"
           maxlength="130"
           placeholder={"Summary"}
@@ -98,11 +111,11 @@ const  formats = [
         </select>
         <input type="file" onChange={(ev) => setFiles(ev.target.files)} />
 
-        <ReactQuill 
-        value={content} 
-        modules={modules}
-        formats={formats}
-        onChange={(ev) => setContent(ev.target.value)}
+        <ReactQuill
+          value={content}
+          modules={modules}
+          formats={formats}
+          onChange={(ev) => setContent(ev.target.value)}
         />
         <button className="submit" type="submit">
           Create post
