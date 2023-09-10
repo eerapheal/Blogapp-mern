@@ -35,7 +35,7 @@ const ContentPage = () => {
           <h2 className="postContentTitle">{postInfo.title}</h2>
 
           <p className="postSummay">{postInfo.summary}</p>
-          <p className="postcontentParagh">{postInfo.content}</p>
+          <div className="postcontentParagh" dangerouslySetInnerHTML={{__html:postInfo.content}}/>
         </div>
       </div>
     </div>
