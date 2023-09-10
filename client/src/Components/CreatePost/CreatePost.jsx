@@ -115,7 +115,7 @@ const CreatePost = () => {
           value={content}
           modules={modules}
           formats={formats}
-          onChange={(ev) => setContent(ev.target.value)}
+          onChange={newValue => setContent(newValue )}
         />
         <button className="submit" type="submit">
           Create post
