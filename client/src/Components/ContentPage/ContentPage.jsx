@@ -1,9 +1,13 @@
-import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import React, { useContext,  useEffect, useState } from "react";
+import { useParams, Link } from "react-router-dom";
 import "./ContentPage.css";
+import { FaPencilAlt } from "react-icons/fa";
+import {UserContext} from '../../UserContext'
+
 const ContentPage = () => {
   const [postInfo, setPostInfo] = useState(null);
   const { id } = useParams();
+  const {userInfo} = useContext(UserContext);
 
   useEffect(() => {
     fetch(`http://localhost:4000/post/${id}`)
@@ -17,7 +21,7 @@ const ContentPage = () => {
         setPostInfo(postInfo);
       })
       .catch((error) => {
-        console.error("Error fetching post data:", error);
+        throw new Error("Error fetching post data:", error);
       });
   }, [id]);
 
@@ -28,6 +32,11 @@ const ContentPage = () => {
   return (
     <div className="mainContent">
       <div className="mainContents">
+      {userInfo.id === postInfo.author._id && (
+        <div>
+          <Link LInk to={`/editPost/${postInfo._id}`}>< FaPencilAlt /></Link>
+        </div>
+      )}
         <div className="contentimg">
           <img  className="contentimg" src={`http://localhost:4000/${postInfo.cover}`} alt="cover" />
         </div>
