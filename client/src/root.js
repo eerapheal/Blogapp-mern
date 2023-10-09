@@ -13,6 +13,7 @@ import CreatePost from "./Components/CreatePost/CreatePost";
 import ContentPage from "./Components/ContentPage/ContentPage";
 import Sport from "./Components/Sport/Sport";
 import Footer from './Components/Footer/Footer'
+import EditPost from './Components/EditPost/EditPost'
 const Root = () => {
   return (
     <Router>
@@ -32,6 +33,7 @@ const Root = () => {
         <Route path="/createPost" element={<CreatePost />} />
         <Route path="/post/:id" element={<ContentPage />} />
         <Route path="/sport" element={<Sport />} />
+        <Route path="/editPost/:id" element={<EditPost />} />
       </Routes>
 
       <footer>
