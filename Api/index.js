@@ -138,10 +138,56 @@ app.post("/post", uploadMiddleWare.single("file"), async (req, res) => {
         category: categoryId, // Assign the selected category
       });
       res.json(createdPost);
+  
     });
   } catch (error) {
     res.status(500).json("An error occurred");
   }
+});
+
+app.put("/post", uploadMiddleWare.single("file"), async (req, res) => {
+  let newPath = null;
+  if (req.file) {
+    const { originalname, path } = req.file;
+    const parts = originalname.split(".");
+    const ext = parts[parts.length - 1];
+    newPath = path + "." + ext;
+    fs.renameSync(path, newPath);
+  }
+
+  const token = req.cookies.token;
+  jwt.verify(token, secret, async (err, decoded) => {
+    if (err) throw err;
+    const { id, title, summary, content, categoryId } = req.body; // Add categoryId
+
+    try {
+      const updatedPost = await Post.findById(id);
+
+      if (!updatedPost) {
+        return res.status(404).json('Post not found');
+      }
+
+      // Check if the user is the author of the post
+      if (JSON.stringify(updatedPost.author) !== JSON.stringify(decoded.id)) {
+        return res.status(400).json('You are not the author');
+      }
+
+      // Update the post fields
+      updatedPost.title = title;
+      updatedPost.summary = summary;
+      updatedPost.content = content;
+      updatedPost.cover = newPath ? newPath : updatedPost.cover;
+      updatedPost.category = categoryId; // Update the category
+
+      // Save the updated post
+      await updatedPost.save();
+
+      res.json(updatedPost);
+    } catch (error) {
+      console.error(error);
+      res.status(500).json('An error occurred while updating the post');
+    }
+  });
 });
 
 
