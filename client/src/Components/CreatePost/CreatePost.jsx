@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Navigate } from "react-router-dom";
 import "./CreatePost.css";
-import ReactQuill from "react-quill";
-import "react-quill/dist/quill.snow.css";
+import Editor from "../EditPost/Editor";
 
 const CreatePost = () => {
   const [title, setTitle] = useState("");
@@ -53,35 +52,6 @@ const CreatePost = () => {
     return <Navigate to={"/"} />;
   }
 
-  const modules = {
-    toolbar: [
-      [{ header: [1, 2, false] }],
-      ["bold", "italic", "underline", "strike", "blockquote"],
-      [
-        { list: "ordered" },
-        { list: "bullet" },
-        { indent: "-1" },
-        { indent: "+1" },
-      ],
-      ["link", "image"],
-      ["clean"],
-    ],
-  };
-
-  const formats = [
-    "header",
-    "bold",
-    "italic",
-    "underline",
-    "strike",
-    "blockquote",
-    "list",
-    "bullet",
-    "indent",
-    "link",
-    "image",
-  ];
-
   return (
     <main className="createHeader">
       <form onSubmit={makePost}>
@@ -111,11 +81,8 @@ const CreatePost = () => {
         </select>
         <input type="file" onChange={(ev) => setFiles(ev.target.files)} />
 
-        <ReactQuill
-          value={content}
-          modules={modules}
-          formats={formats}
-          onChange={newValue => setContent(newValue )}
+        <Editor value={content}
+          onChange={(ev) => setContent(ev.target.value)}
         />
         <button className="submit" type="submit">
           Create post
