@@ -6,6 +6,10 @@ const Header = () => {
   const { setUserInfo, userInfo } = useContext(UserContext);
   const navigate = useNavigate();
 
+    const updateUserInfo = (userData) => {
+    setUserInfo(userData);
+  };
+  
   useEffect(() => {
     fetch("http://localhost:4000/profile", {
       credentials: "include",
@@ -15,13 +19,9 @@ const Header = () => {
         updateUserInfo(userData);
       })
       .catch((error) => {
-        console.error("Error retrieving user profile:", error);
+        throw new Error("Error retrieving user profile:", error);
       });
   }, []);
-
-  const updateUserInfo = (userData) => {
-    setUserInfo(userData);
-  };
 
   function logout() {
     fetch("http://localhost:4000/logout", {
@@ -119,9 +119,7 @@ const Header = () => {
                   Make Post
                 </Link>
 
-                <a className="mobilenavlinks" onClick={logout}>
-                  Logout
-                </a>
+                <button onClick={logout}>Logout</button>
               </>
             ) : (
               <>
@@ -224,9 +222,9 @@ const Header = () => {
                 <>
                   <Link to="/createPost">Make Post</Link>
 
-                  <a className="navlinks" onClick={logout}>
+                  <button className="navlinks" onClick={logout}>
                     Logout
-                  </a>
+                  </button>
                 </>
               ) : (
                 <>

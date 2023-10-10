@@ -24,8 +24,8 @@ const  Footer  = () => {
           <ul>
           <li><a href="https://www.youtube.com/channel/UC4kvJ-oD7LqGyoO4cXoHzZw"><i className="fab fa-youtube"></i></a></li>
             <li><a href="https://www.facebook.com/SantMagazi/"><i className="fab fa-facebook"></i></a></li>
-            <li><a href="#"><i className="fab fa-twitter"></i></a></li>
-            <li><a href="#"><i className="fab fa-instagram"></i></a></li>
+            <li><a href="/"><i className="fab fa-twitter"></i></a></li>
+            <li><a href="/"><i className="fab fa-instagram"></i></a></li>
           </ul>
         </div>
       </div>
