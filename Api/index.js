@@ -4,16 +4,16 @@ require('dotenv').config();
 const MONGODB_URI = process.env.MONGODB_URI;
 const User = require("./models/User.js");
 const Post = require("./models/Post.js");
-const categoriesRouter = require('./controller/categories');
+const categoriesRouter = require('./controllers/categories.js');
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const cookieParser = require("cookie-parser");
 const uploadMiddleWare = require('./middleware/uploadMiddleware');
 const fs = require("fs");
-const sportRouter = require('./controller/sport');
-const healthRouter = require('./controller/health');
-const technologyRouter = require('./controller/technologies');
-const lifeStyleRouter = require('./controller/lifeStyle')
+const healthRouter = require('./controllers/health.js');
+const sportRouter = require('./controllers/Sport.js');
+const technologyRouter = require('./controllers/technologies.js');
+const lifeStyleRouter = require('./controllers/lifeStyle.js')
 const corsMiddleware = require('./middleware/corsMiddleware');
 
 const app = express();
