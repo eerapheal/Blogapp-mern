@@ -1,6 +1,8 @@
 const express = require("express");
 const cors = require("cors");
 const mongoose = require("mongoose");
+require('dotenv').config();
+const MONGODB_URI = process.env.MONGODB_URI;
 const User = require("./models/User.js");
 const Post = require("./models/Post.js");
 const categoriesRouter = require('./controller/categories');
@@ -37,7 +39,7 @@ app.use('/lifeStyle', lifeStyleRouter);
 
 mongoose
   .connect(
-    "mongodb+srv://santmagazine:1GIetw5nkT3voFjG@cluster0.a10eqft.mongodb.net/santmagazine",
+    MONGODB_URI,
     {
       useNewUrlParser: true,
       useUnifiedTopology: true,
