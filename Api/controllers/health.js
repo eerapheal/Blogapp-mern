@@ -7,7 +7,7 @@ const Category = require("../models/Category.js");
 router.get("/", async (req, res) => {
   try {
     // Find the "Health" category first
-    const healthCategory = await Category.findOne({ name: "health" });
+    const healthCategory = await Category.findOne({ name: "Health" });
 
     if (!healthCategory) {
       return res.status(404).json({ error: "Health category not found" });
