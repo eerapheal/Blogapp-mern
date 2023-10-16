@@ -1,5 +1,4 @@
 const express = require("express");
-// const cors = require("cors");
 const mongoose = require("mongoose");
 require('dotenv').config();
 const MONGODB_URI = process.env.MONGODB_URI;
@@ -10,9 +9,6 @@ const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const cookieParser = require("cookie-parser");
 const uploadMiddleWare = require('./middleware/uploadMiddleware');
-
-// const multer = require("multer");
-// const uploadMiddleWare = multer({ dest: "uploads/" });
 const fs = require("fs");
 const sportRouter = require('./controller/sport');
 const healthRouter = require('./controller/health');
