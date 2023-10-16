@@ -16,17 +16,13 @@ const sportRouter = require('./controller/sport');
 const healthRouter = require('./controller/health');
 const technologyRouter = require('./controller/technologies');
 const lifeStyleRouter = require('./controller/lifeStyle')
+const corsMiddleware = require('./middleware/corsMiddleware');
 
 const app = express();
 const salt = bcrypt.genSaltSync(10);
 const secret = "cvjhhhhhjlkyxcgvgfxdfcvg";
 
-app.use(
-  cors({
-    credentials: true,
-    origin: "http://localhost:3000",
-  })
-);
+app.use(corsMiddleware);
 
 app.use(express.json());
 app.use(cookieParser());
