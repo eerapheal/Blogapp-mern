@@ -37,7 +37,7 @@ app.use('/lifeStyle', lifeStyleRouter);
 
 mongoose
   .connect(
-    "mongodb+srv://ekpenisiraphael:RGDJAzqGpAc3L496@cluster0.nqm5shy.mongodb.net/mydatabase",
+    "mongodb+srv://santmagazine:1GIetw5nkT3voFjG@cluster0.a10eqft.mongodb.net/santmagazine",
     {
       useNewUrlParser: true,
       useUnifiedTopology: true,

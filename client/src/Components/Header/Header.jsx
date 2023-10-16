@@ -1,15 +1,19 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState, useEffect, useContext, useCallback } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { UserContext } from "../../UserContext";
 import "./Header.css";
+
 const Header = () => {
   const { setUserInfo, userInfo } = useContext(UserContext);
   const navigate = useNavigate();
 
-    const updateUserInfo = (userData) => {
-    setUserInfo(userData);
-  };
-  
+  const updateUserInfo = useCallback(
+    (userData) => {
+      setUserInfo(userData);
+    },
+    [setUserInfo]
+  );
+
   useEffect(() => {
     fetch("http://localhost:4000/profile", {
       credentials: "include",
@@ -21,7 +25,7 @@ const Header = () => {
       .catch((error) => {
         throw new Error("Error retrieving user profile:", error);
       });
-  }, []);
+  }, [updateUserInfo]);
 
   function logout() {
     fetch("http://localhost:4000/logout", {
@@ -31,6 +35,7 @@ const Header = () => {
     setUserInfo(null);
     navigate("/"); // Redirect to the login page
   }
+
 
   const email = userInfo?.email;
 
@@ -119,7 +124,7 @@ const Header = () => {
                   Make Post
                 </Link>
 
-                <button onClick={logout}>Logout</button>
+                <button className="navLinksBtn" onClick={logout}>Logout</button>
               </>
             ) : (
               <>
@@ -222,7 +227,7 @@ const Header = () => {
                 <>
                   <Link to="/createPost">Make Post</Link>
 
-                  <button className="navlinks" onClick={logout}>
+                  <button className="navLinksBtn" onClick={logout}>
                     Logout
                   </button>
                 </>
@@ -231,7 +236,7 @@ const Header = () => {
                   <Link to="/login" alt="Login">
                     Login
                   </Link>
-                  <Link to="/signup" alt="Signup" className="navlinks">
+                  <Link to="/signup" alt="Signup" className="navLinks">
                     Sign Up
                   </Link>
                 </>

@@ -36,6 +36,14 @@
     color: #fff;
     border: 2px solid rgb(0, 183, 255);
   }
+
+  .navLinksBtn {
+    background-color: #19c37d;
+    border: none;
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: 400;
+  }
   
   .mobilenavlinks a {
     text-decoration: none;

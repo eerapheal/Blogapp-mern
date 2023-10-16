@@ -7,7 +7,7 @@ import "./NewsList.css";
 const NewsList = ({ news, loading, error, publishedAt, fetchNews }) => {
   useEffect(() => {
     fetchNews();
-  }, []);
+  }, [fetchNews]);
 
   if (loading) {
     return <p>Loading...</p>;
