@@ -60,7 +60,7 @@ const Login = () => {
           />
         </span>
         <span className="span">
-          <a href="#">Forgot password?</a>
+          <a href="/">Forgot password?</a>
         </span>
         <input className="submit" type="submit" value="Log in" />
         <span className="span">
