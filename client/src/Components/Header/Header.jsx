@@ -15,7 +15,7 @@ const Header = () => {
   );
 
   useEffect(() => {
-    fetch("http://localhost:4000/profile", {
+    fetch("https://santmagazine.onrender.com/profile", {
       credentials: "include",
     })
       .then((response) => response.json())
@@ -28,14 +28,13 @@ const Header = () => {
   }, [updateUserInfo]);
 
   function logout() {
-    fetch("http://localhost:4000/logout", {
+    fetch("https://santmagazine.onrender.com/logout", {
       credentials: "include",
       method: "POST",
     });
     setUserInfo(null);
     navigate("/"); // Redirect to the login page
   }
-
 
   const email = userInfo?.email;
 
@@ -65,7 +64,11 @@ const Header = () => {
           </div>
           <div>
             <Link to="/" alt="Logo">
-             <span className="logo" > Sant<span className="logoB">M</span>agazi</span>            </Link>
+              <span className="logo">
+                {" "}
+                Sant<span className="logoB">M</span>agazi
+              </span>{" "}
+            </Link>
           </div>
         </nav>
         <div className={menu_class}>
@@ -124,7 +127,9 @@ const Header = () => {
                   Make Post
                 </Link>
 
-                <button className="navLinksBtn" onClick={logout}>Logout</button>
+                <button className="navLinksBtn" onClick={logout}>
+                  Logout
+                </button>
               </>
             ) : (
               <>
@@ -141,8 +146,11 @@ const Header = () => {
       </div>
       <div className="headerDesk">
         <div>
-          <Link to="/"alt="Logo">
-          <span className="logo" > Sant<span className="logoB">M</span>agazi</span>
+          <Link to="/" alt="Logo">
+            <span className="logo">
+              {" "}
+              Sant<span className="logoB">M</span>agazi
+            </span>
           </Link>
         </div>
         <nav>

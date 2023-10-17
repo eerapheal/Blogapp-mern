@@ -10,7 +10,7 @@ const SignUp = () => {
   const register = async (ev) => {
     ev.preventDefault();
 
-    const response = await fetch("http://localhost:4000/register", {
+    const response = await fetch("https://santmagazine.onrender.com/register", {
       method: "POST",
       body: JSON.stringify({ username, email, password }),
       headers: {
@@ -23,7 +23,7 @@ const SignUp = () => {
   };
 
   return (
-    <main style={{padding: '70px'}}>
+    <main style={{ padding: "70px" }}>
       <form className="form" onSubmit={register}>
         <h1 className="formTitle">Sign up new user</h1>
         <span className="input-span">

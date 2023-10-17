@@ -1,6 +1,6 @@
 import React, { useState, useContext } from "react";
 import { Link, Navigate } from "react-router-dom";
-import { UserContext }  from '../../UserContext'
+import { UserContext } from "../../UserContext";
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -9,7 +9,7 @@ const Login = () => {
   const login = async (ev) => {
     ev.preventDefault();
 
-    const response = await fetch("http://localhost:4000/login", {
+    const response = await fetch("https://santmagazine.onrender.com/login", {
       method: "POST",
       body: JSON.stringify({ email, password }),
       headers: {
@@ -20,10 +20,10 @@ const Login = () => {
 
     if (response.ok) {
       // Handle successful login, e.g., save token to local storage
-      response.json().then(userInfo => {
-        setUserInfo(userInfo)
+      response.json().then((userInfo) => {
+        setUserInfo(userInfo);
         setRedirect(true);
-      })
+      });
     }
   };
 

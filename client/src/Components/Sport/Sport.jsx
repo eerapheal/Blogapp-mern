@@ -16,7 +16,7 @@ const Sport = ({ _id, title, summary, cover, content, createdAt, author }) => {
 
   useEffect(() => {
     // Fetch posts in the "Sport" category from your backend
-    fetch("http://localhost:4000/sport", {
+    fetch("https://santmagazine.onrender.com/sport", {
       method: "GET",
       credentials: "include",
     })
@@ -39,7 +39,7 @@ const Sport = ({ _id, title, summary, cover, content, createdAt, author }) => {
               <Link to={`/post/${post._id}`}>
                 <img
                   className="imgsport"
-                  src={`http://localhost:4000/${post.cover}`}
+                  src={`https://santmagazine.onrender.com/${post.cover}`}
                   alt="cover"
                 />
               </Link>

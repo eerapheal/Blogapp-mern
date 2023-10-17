@@ -16,7 +16,7 @@ const Health = ({ _id, title, summary, cover, content, createdAt, author }) => {
 
   useEffect(() => {
     // Fetch posts in the "health" category from your backend
-    fetch("http://localhost:4000/health", {
+    fetch("https://santmagazine.onrender.com/health", {
       method: "GET",
       credentials: "include",
     })
@@ -38,7 +38,7 @@ const Health = ({ _id, title, summary, cover, content, createdAt, author }) => {
             <Link to={`/post/${post._id}`}>
               <img
                 className="image"
-                src={`http://localhost:4000/${post.cover}`}
+                src={`https://santmagazine.onrender.com/${post.cover}`}
                 alt="cover"
               />
             </Link>

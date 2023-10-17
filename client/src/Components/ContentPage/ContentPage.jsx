@@ -10,7 +10,7 @@ const ContentPage = () => {
   const { userInfo } = useContext(UserContext);
 
   useEffect(() => {
-    fetch(`http://localhost:4000/post/${id}`)
+    fetch(`https://santmagazine.onrender.com/post/${id}`)
       .then((response) => {
         if (!response.ok) {
           throw new Error("Network response was not ok");
@@ -42,7 +42,7 @@ const ContentPage = () => {
         <div className="contentimg">
           <img
             className="contentimg"
-            src={`http://localhost:4000/${postInfo.cover}`}
+            src={`https://santmagazine.onrender.com/${postInfo.cover}`}
             alt="cover"
           />
         </div>

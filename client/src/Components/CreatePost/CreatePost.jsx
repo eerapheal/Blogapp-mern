@@ -14,7 +14,7 @@ const CreatePost = () => {
 
   useEffect(() => {
     // Fetch the list of categories from your server when the component mounts
-    fetch("http://localhost:4000/categories", {
+    fetch("https://santmagazine.onrender.com/categories", {
       method: "GET",
       credentials: "include",
     })
@@ -38,7 +38,7 @@ const CreatePost = () => {
     data.set("content", content);
     data.set("file", files[0]);
     data.set("categoryId", category);
-    const response = await fetch("http://localhost:4000/post", {
+    const response = await fetch("https://santmagazine.onrender.com/post", {
       method: "POST",
       body: data,
       credentials: "include",
@@ -81,7 +81,8 @@ const CreatePost = () => {
         </select>
         <input type="file" onChange={(ev) => setFiles(ev.target.files)} />
 
-        <Editor value={content}
+        <Editor
+          value={content}
           onChange={(ev) => setContent(ev.target.value)}
         />
         <button className="submit" type="submit">

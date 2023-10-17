@@ -24,7 +24,7 @@ const Technology = ({
 
   useEffect(() => {
     // Fetch posts in the "technology" category from your backend
-    fetch("http://localhost:4000/technologies", {
+    fetch("https://santmagazine.onrender.com/technologies", {
       method: "GET",
       credentials: "include",
     })
@@ -46,7 +46,7 @@ const Technology = ({
             <Link to={`/post/${post._id}`}>
               <img
                 className="imgtechnology"
-                src={`http://localhost:4000/${post.cover}`}
+                src={`https://santmagazine.onrender.com/${post.cover}`}
                 alt="cover"
               />
             </Link>
