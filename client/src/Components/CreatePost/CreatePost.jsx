@@ -62,9 +62,9 @@ const CreatePost = () => {
           onChange={(ev) => setTitle(ev.target.value)}
         />
         <input
-          calssName="createHeader"
+          className="createHeader"
           type="summary"
-          maxlength="130"
+          maxLength="130"
           placeholder={"Summary"}
           value={summary}
           onChange={(ev) => setSummary(ev.target.value)}
