@@ -14,7 +14,7 @@ const CreatePost = () => {
 
   useEffect(() => {
     // Fetch the list of categories from your server when the component mounts
-    fetch("https://santmagazine.onrender.com/categories", {
+    fetch("http://localhost:4000/categories", {
       method: "GET",
       credentials: "include",
     })
@@ -38,7 +38,7 @@ const CreatePost = () => {
     data.set("content", content);
     data.set("file", files[0]);
     data.set("categoryId", category);
-    const response = await fetch("https://santmagazine.onrender.com/post", {
+    const response = await fetch("http://localhost:4000/post", {
       method: "POST",
       body: data,
       credentials: "include",

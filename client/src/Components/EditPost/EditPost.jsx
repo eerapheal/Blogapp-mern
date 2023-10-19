@@ -11,7 +11,7 @@ const EditPost = () => {
   const [redirect, setRedirect] = useState(false); // Changed to false
 
   useEffect(() => {
-    fetch("https://santmagazine.onrender.com/post/" + id).then((response) => {
+    fetch("http://localhost:4000/post/" + id).then((response) => {
       response.json().then((postInfo) => {
         setTitle(postInfo.title);
         setSummary(postInfo.summary);
@@ -32,7 +32,7 @@ const EditPost = () => {
       data.set("file", files?.[0]);
     }
 
-    const response = await fetch("https://santmagazine.onrender.com/post/", {
+    const response = await fetch("http://localhost:4000/post/", {
       method: "PUT",
       body: data,
       credentials: 'include',

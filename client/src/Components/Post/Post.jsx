@@ -11,7 +11,7 @@ const Post = () => {
     // Move the fetch call to a separate useEffect to avoid infinite rendering
     const fetchData = async () => {
       try {
-        const response = await fetch("https://santmagazine.onrender.com/post");
+        const response = await fetch("http://localhost:4000/post");
         if (response.ok) {
           const data = await response.json();
           if (Array.isArray(data)) {
@@ -53,13 +53,13 @@ const Post = () => {
             }
 
             return (
-              <div className="HeadlineWraper">
-                <div key={post._id}>
+              <div className="HeadlineWraper" key={post._id}>
+                <div >
                   <div className=" postCard stack">
                     <Link to={`/post/${post._id}`}>
                       <img
                         className="imgpost"
-                        src={`https://santmagazine.onrender.com/${post.cover}`}
+                        src={`http://localhost:4000/${post.cover}`}
                         alt="cover"
                       />
                     </Link>
