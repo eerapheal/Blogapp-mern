@@ -2,6 +2,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 require('dotenv').config();
 const MONGODB_URI = process.env.MONGODB_URI;
+const SECRET_KEY = process.env.SECRET_KEY;
 const User = require("./models/User.js");
 const Post = require("./models/Post.js");
 const categoriesRouter = require('./controllers/categories.js');
@@ -18,7 +19,7 @@ const corsMiddleware = require('./middleware/corsMiddleware');
 
 const app = express();
 const salt = bcrypt.genSaltSync(10);
-const secret = "cvjhhhhhjlkyxcgvgfxdfcvg";
+
 
 app.use(corsMiddleware);
 
@@ -75,7 +76,7 @@ app.post("/login", async (req, res) => {
     const passMatch = bcrypt.compareSync(password, userData.password);
 
     if (passMatch) {
-      jwt.sign({ email, id: userData._id }, secret, {}, (err, token) => {
+      jwt.sign({ email, id: userData._id }, SECRET_KEY, {}, (err, token) => {
         if (err) throw err;
         res.cookie("token", token, { httpOnly: true }).json({
           id: userData._id,
@@ -98,7 +99,7 @@ app.get("/profile", (req, res) => {
     return;
   }
 
-  jwt.verify(token, secret, (err, decoded) => {
+  jwt.verify(token, SECRET_KEY, (err, decoded) => {
     if (err) throw err;
     res.json(decoded);
   });
@@ -117,7 +118,7 @@ app.post("/post", uploadMiddleWare.single("file"), async (req, res) => {
     fs.renameSync(path, newPath);
 
     const token = req.cookies.token;
-    jwt.verify(token, secret, async (err, decoded) => {
+    jwt.verify(token, SECRET_KEY, async (err, decoded) => {
       if (err) throw err;
 
       const { title, summary, content, categoryId } = req.body; // Add categoryId
@@ -152,7 +153,7 @@ app.put("/post", uploadMiddleWare.single("file"), async (req, res) => {
   }
 
   const token = req.cookies.token;
-  jwt.verify(token, secret, async (err, decoded) => {
+  jwt.verify(token, SECRET_KEY, async (err, decoded) => {
     if (err) throw err;
     const { id, title, summary, content, categoryId } = req.body; // Add categoryId
 
